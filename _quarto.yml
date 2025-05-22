@@ -2,13 +2,13 @@ project:
   type: book
 
 book:
-  title: "demo_tabloid"
-  author: "Norah Jones"
+  title: "Démo du package Tabloid"
+  author: "Rémi Dumas"
   date: "22/05/2025"
   chapters:
     - index.qmd
     - intro.qmd
-    - summary.qmd
+    - exercices.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -16,7 +16,7 @@ bibliography: references.bib
 format:
   html:
     theme:
-      - cosmo
+      - sandstone
       - brand
   pdf:
     documentclass: scrreprt
