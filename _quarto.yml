@@ -18,8 +18,7 @@ format:
     theme:
       - sandstone
       - brand
-  pdf:
-    documentclass: scrreprt
+
 
 
 
