@@ -3,18 +3,31 @@ project:
 
 book:
   title: "Démo du package Tabloid"
-  author: "Rémi Dumas"
+  author: 
+    - name: Rémi Dumas
+    - orcid: 0009-0006-0434-7193
+    - email: remi.dumas@insee.fr
+    - affiliation: 
+      - name: Cefil
+      - url: http://www.cefil.fr
   date: "22/05/2025"
   chapters:
     - index.qmd
     - intro.qmd
+    - exemples.qmd
     - exercices.qmd
     - references.qmd
 
 bibliography: references.bib
 
+tbl-cap-location: bottom
+df-print: default
+
 format:
   html:
+    toc-title: Navigation
+    toc: true
+    toc-expand: 2
     theme:
       - sandstone
       - brand

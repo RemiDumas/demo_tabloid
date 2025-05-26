@@ -1,9 +1,49 @@
-# Introduction
+# Le package Tabloid {.unnumbered}
 
-This is a book created from markdown and executable code.
+Ce package (@citeTabloid) propose un ensemble de fonctions consistantes qui simplifient la création de tableaux statistiques. Il est développé par [Laurette Crétin](mailto:laurette.cretin@insee.fr) et [Maelle Fontaine](https://github.com/maellefontaine2).
 
-See @knuth84 for additional discussion of literate programming.
+-   Le dépôt Github: <https://github.com/InseeFrLab/tabloid>
+-   La page vignette contenant quelques articles: <https://inseefrlab.github.io/tabloid/>
 
-```{r}
-1 + 1
+## Fonctionnalités
+
+-   Créer un tableau à partir de n'importe quel croisement et n'importe quelle statistique pondérée ou pas.
+-   Calculer les marges
+-   Afficher les profils lignes ou colonnes
+-   Masquer des cellules
+-   Avertir si les effectifs sont peu nombreux
+-   Exporter au format xlsx ou html
+
+## Installation
+
+La procédure d'installation dépend de l'environnement dans lequel se trouve `R`
+
+1️⃣ __Accès à internet: depuis `Github`__
+
+```r
+# install.packages("remotes")
+remotes::install_github("inseefrlab/tabloid",
+                     dependencies = TRUE)
+                     
 ```
+
+2️⃣ __Pas d'accès à internet (AUS, LS3...): depuis un `Gitlab` interne :
+
+```r
+# install.packages("remotes")
+remotes::install_git("https://gitlab.insee.fr/espace-charges-etudes/boite-outils/tableaux",
+                     dependencies = TRUE)
+                     
+```
+
+## Les données utilisées
+Le package est accompagné d'un extrait de la [base des prénoms](https://inseefrlab.github.io/tabloid/reference/prenoms.html). Les exemples contenus dans la vignette du package sont construits en utilisant ce jeu de données.
+
+Pour avoir un ensemble d'exemples supplémentaires, nous allons utiliser:
+
+- [grandile](https://raw.githubusercontent.com/RemiDumas/demo_tabloid/refs/heads/main/donnees/grandile.rds)
+- [gapminder](https://raw.githubusercontent.com/RemiDumas/demo_tabloid/refs/heads/main/donnees/gapminder.rds)
+
+## Résumé
+
+![](schema_tab.png)

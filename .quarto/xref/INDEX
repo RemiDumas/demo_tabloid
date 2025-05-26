@@ -10,5 +10,11 @@
   },
   "references.qmd": {
     "references.html": "a2aa1a2b"
+  },
+  "exemples.qmd": {
+    "exemples.html": "4795c347"
+  },
+  "exercices.qmd": {
+    "exercices.html": "836f2c16"
   }
 }

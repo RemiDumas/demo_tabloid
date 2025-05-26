@@ -1,0 +1,253 @@
+# Réaliser un tableau {.unnumbered}
+
+```{r}
+#| include: false
+#| label: packagesdonnees
+library('dplyr')
+library('tabloid')
+grandile <- readRDS('donnees/grandile.rds')
+```
+
+## Chargement des packages et des données
+
+```{r}
+#| eval: false
+library('dplyr')
+library('tabloid')
+grandile <- readRDS('donnees/grandile.rds')
+glimpse(grandile)
+```
+
+```{r}
+#| echo: false
+glimpse(grandile)
+```
+
+## Réaliser un tri à plat
+Le package tabloid fournit un ensemble d efonctions utiles à la réalisation de tableaux statistiques. La première fonction à employer est `tab_build()`. 
+
+::: callout-caution
+## La fonction tab_build()
+Les paramètres:
+
+- `var_rows`: les variables de comptage ventilée en lignes (entre quotes),
+- `var_cols`: les variables de comptage ventilée en colonnes (entre quotes),
+- `var_stat`: la variable de comptage,
+- `stat`: la statistique à utiliser (par défaut "count"): 
+    - "mean" : moyenne,
+    - "min" : minimum,
+    - "max" : maximum,
+    - "median" : médiane,
+    - "sum" : somme,
+    - "quantile" : quantile,
+    - "weighted_mean" : moyenne pondérée,
+    - "weighted_sum" : somme pondérée
+- `var_w`: la variable de pondération, 
+- `probs`: quantile à calculer si `stat` est "quantile",
+- `lab_total`: Le texte pour la marge (par défaut "Ensemble")
+
+:::
+
+On réalise un tri à plat sur la variable MODCOHA.
+
+```{r}
+#| label: tbl-modcoha1
+#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+tab1 <- grandile %>% 
+  tab_build(var_rows = "MODCOHA")
+tab1
+```
+
+::: callout-warning
+## Ordre des modalités
+On remarque que les modalités ne s'affichent pas dans l'ordre alphanumérique croissant. Il faut trier la table au préalable:
+```{r}
+#| label: tbl-modcoha2
+#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+tab1 <- grandile %>% 
+  arrange(MODCOHA) %>% 
+  tab_build(var_rows = "MODCOHA")
+tab1
+```
+:::
+
+### Profil colonne
+
+La fonction `tab_pct()` calcule les profils lignes ou colonnes. 
+
+::: {layout-ncol="2"}
+#### Pour un profil ligne
+``` r
+#| label: exemple-tabpct1
+tab %>%
+  tab_pct(
+    pct = "row"
+  )
+```
+
+#### Pour un profil colonne
+``` r
+#| label: exemple-tabpct1
+tab %>%
+  tab_pct(
+    pct = "col"
+  )
+```
+:::
+
+Transformons notre tableau de comptage en calculant les parts de chaque modalités dans la population de Grandile:
+```{r}
+#| label: tbl-modcoha3
+#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+tab1b <- tab1 %>% 
+  tab_pct(
+    pct = "col"
+  )
+tab1b
+```
+
+### Affichage d'arrondis
+La fonction `tab_round()` permet d'arrondir les données des cellules, et éventuellement de gérer la cohérence des sommes à 100 % pour les pourcentages lignes et colonnes, en proposant différentes règles de décision.
+
+::: callout-caution
+```r
+tab_round(
+  tab,
+  n = 0,
+  guarantee_100 = FALSE,
+  option = "lowest_lie",
+  verbose = FALSE
+)
+```
+
+- `n`: indique le nombre de décimales à afficher
+- `guarantee_100`: gère la cohérence des arrondis
+- `option`: comment la garantie à 100 va être supportée
+- `verbose`: affiche dans la console des informations sur le traitement 
+:::
+
+Arrondissons le tableau précédent à une décimale:
+
+```{r}
+#| label: tbl-modcoha4
+#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+tab1c <- tab1b %>% 
+  tab_round(
+    n = 1
+  ) 
+tab1c
+```
+
+::: callout-tip
+La console n'affiche pas toutes les décimales, par exemple:
+```{r}
+tab1b %>% 
+  tab_round(
+    n = 3
+  ) 
+```
+
+Il faut préciser le nombre de chiffres affichés (par exemple 7) grâce à la commande `pillar::pillar_options()` (voir @pillaroptions). La commande `options(old)` permet de revenir au paramétrage initial.
+
+```{r}
+old <- options(pillar.sigfig = 7)
+
+tab1b %>% 
+  tab_round(
+    n = 3,
+    guarantee_100 = FALSE
+  ) 
+options(old)
+```
+
+:::
+
+### Masquer des cellules
+
+La fonction `tab_mask()` permet de masquer les cellules d'un tableau :
+- les cellules non-nulles inférieures à un seuil, en nombre de lignes ou en somme de la variable `var_stat`
+- les cellules correspondant aux marges
+
+```r
+tab_mask(
+  tab,
+  threshold_count = NULL,
+  threshold_sum = NULL,
+  mask_total = "",
+  verbose = TRUE
+)
+```
+
+- `threshold_count`: nombre de lignes de la table initiale en-deça duquel la valeur est masquée (exclusif)
+- `threshold_sum`: à renseigner pour `stat = sum`, valeur de la cellule en-deça de laquelle la valeur est masquée (exclusif)
+- `mask_total`: masquage ou non des totaux:
+    - "cols" : masquage des totaux en colonnes
+    - "rows" : masquage des totaux en lignes
+    - c("rows", "cols") : masquage de l'ensemble des totaux
+- `verbose`: affichage ou non du nombre de cellules masquées par la fonction
+
+Masquons les modalités comprenant moins de 500 individus, sans masquer le total:
+```{r}
+#| label: tbl-modcoha5
+#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+
+tab1 %>% 
+  tab_mask(
+    threshold_count = 500
+  )
+```
+
+### Exporter un tableau
+Le package présente deux options pour exporter les tableaux générés.
+#### Export vers Calc
+La fonction tab_xlsx() permet d'enregistrer le tableau mis en forme dans un fichier .xlsx.
+
+```r
+tab_xlsx(
+  tab,
+  path,
+  sheet,
+  title = "",
+  note = "",
+  lab_rows = NULL,
+  lab_cols = NULL,
+  open_wb = TRUE,
+  update = TRUE
+)
+```
+
+- `path`: chemin dans lequel exporter le tableau
+- `sheet`: nom de l'onglet dans le classeur - si l'onglet existe déjà, il sera mis à jour avec update = TRUE
+- `title`: titre
+- `note`: note de bas de page
+- `lab_rows`: nouveaux libellés pour les variables lignes
+- `lab_cols`: nouveaux libellés pour les modalités des variables colonnes
+- `open_wb`: ouverture du classeur crée pour visualisation
+- `update`: mise à jour de l'onglet s'il existe déjà dans le classeur (attention, par défaut: TRUE ce qui écrasera les versions existantes)
+
+Exportons notre tableau dans un sous répertoire. Donnons lui un titre, une source et modifions le nom de la variable `MODCOHA` en *Mode de cohabitation*.
+
+```{r}
+#| label: exportxlsx
+if(!dir.exists("_sorties")){dir.create("_sorties")}
+
+tab1c %>% 
+  tab_xlsx(
+    path = "_sorties/tableaux.xlsx", 
+    sheet = "MODCOHA",
+    title = "Répartition des ménages de grandile selon le mode de cohabitation",
+    note = "Source: Cefil 2025",
+    lab_rows = "Mode de cohabitation"
+    )
+```
+
+#### Document Quarto
+
+
+## Tableaux de contingence
+
+## Tableaux de moyennes
+
+## Variable pondérée
+
+## Exporter un tableau

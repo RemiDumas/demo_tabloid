@@ -1,0 +1,172 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Démo du package Tabloid",
+    "section": "",
+    "text": "Accueil\nSupport pour la démo du package tabloid (durée 1h30)\n{style = “margin: auto;”}",
+    "crumbs": [
+      "Accueil"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "Le package Tabloid",
+    "section": "",
+    "text": "Fonctionnalités\nCe package (Fontaine and Cretin (2024)) propose un ensemble de fonctions consistantes qui simplifient la création de tableaux statistiques. Il est développé par Laurette Crétin et Maelle Fontaine.",
+    "crumbs": [
+      "Le package Tabloid"
+    ]
+  },
+  {
+    "objectID": "intro.html#fonctionnalités",
+    "href": "intro.html#fonctionnalités",
+    "title": "Le package Tabloid",
+    "section": "",
+    "text": "Créer un tableau à partir de n’importe quel croisement et n’importe quelle statistique pondérée ou pas.\nCalculer les marges\nAfficher les profils lignes ou colonnes\nMasquer des cellules\nAvertir si les effectifs sont peu nombreux\nExporter au format xlsx ou html",
+    "crumbs": [
+      "Le package Tabloid"
+    ]
+  },
+  {
+    "objectID": "intro.html#installation",
+    "href": "intro.html#installation",
+    "title": "Le package Tabloid",
+    "section": "Installation",
+    "text": "Installation\nLa procédure d’installation dépend de l’environnement dans lequel se trouve R\n1️⃣ Accès à internet: depuis Github\n# install.packages(\"remotes\")\nremotes::install_github(\"inseefrlab/tabloid\",\n                     dependencies = TRUE)\n                     \n2️⃣ __Pas d’accès à internet (AUS, LS3…): depuis un Gitlab interne :\n# install.packages(\"remotes\")\nremotes::install_git(\"https://gitlab.insee.fr/espace-charges-etudes/boite-outils/tableaux\",\n                     dependencies = TRUE)",
+    "crumbs": [
+      "Le package Tabloid"
+    ]
+  },
+  {
+    "objectID": "intro.html#les-données-utilisées",
+    "href": "intro.html#les-données-utilisées",
+    "title": "Le package Tabloid",
+    "section": "Les données utilisées",
+    "text": "Les données utilisées\nLe package est accompagné d’un extrait de la base des prénoms. Les exemples contenus dans la vignette du package sont construits en utilisant ce jeu de données.\nPour avoir un ensemble d’exemples supplémentaires, nous allons utiliser:\n\ngrandile\ngapminder",
+    "crumbs": [
+      "Le package Tabloid"
+    ]
+  },
+  {
+    "objectID": "intro.html#résumé",
+    "href": "intro.html#résumé",
+    "title": "Le package Tabloid",
+    "section": "Résumé",
+    "text": "Résumé\n\n\n\n\n\nFontaine, Maëlle, and Laurette Cretin. 2024. Tabloid: Creation de Tableaux Croises. https://inseefrlab.github.io/tabloid/.",
+    "crumbs": [
+      "Le package Tabloid"
+    ]
+  },
+  {
+    "objectID": "exemples.html",
+    "href": "exemples.html",
+    "title": "Réaliser un tableau",
+    "section": "",
+    "text": "Chargement des packages et des données\nlibrary('dplyr')\nlibrary('tabloid')\ngrandile &lt;- readRDS('donnees/grandile.rds')\nglimpse(grandile)\nRows: 5,418\nColumns: 10\n$ IDENT      &lt;chr&gt; \"G0001\", \"G0002\", \"G0003\", \"G0004\", \"G0005\", \"G0006\", \"G000…\n$ MODCOHA    &lt;chr&gt; \"4 - Couple sans enfant\", \"1 - Ménage d'une personne\", \"1 -…\n$ NBPERS     &lt;int&gt; 2, 1, 1, 2, 4, 2, 6, 4, 2, 3, 2, 2, 1, 1, 2, 3, 1, 4, 2, 4,…\n$ NBPIECES   &lt;int&gt; 4, 3, 1, 2, 5, 3, 4, 4, 5, 5, 3, 2, 2, 1, 2, 8, 3, 8, 5, 5,…\n$ AGE        &lt;int&gt; 59, 96, 41, 74, 38, 43, 67, 34, 53, 29, 33, 86, 69, 91, 59,…\n$ DIPL       &lt;chr&gt; \"2 - BEPC, brevet des collèges\", \"6 - Diplôme universitaire…\n$ PCS        &lt;chr&gt; \"5 - Employés\", \"7 - Inactifs ayant déjà travaillé\", \"4 - P…\n$ ACT        &lt;chr&gt; \"4 - Tertiaire\", \"0 - Sans activité\", \"2 - Industrie\", \"0 -…\n$ REVENU     &lt;int&gt; 38062, 14155, 78049, 21418, 83738, 35527, 38543, 56133, 610…\n$ PATRIMOINE &lt;int&gt; 569054, 412947, 1848967, 403576, 2138502, 991147, 745235, 6…",
+    "crumbs": [
+      "Réaliser un tableau"
+    ]
+  },
+  {
+    "objectID": "exemples.html#réaliser-un-tri-à-plat",
+    "href": "exemples.html#réaliser-un-tri-à-plat",
+    "title": "Réaliser un tableau",
+    "section": "Réaliser un tri à plat",
+    "text": "Réaliser un tri à plat\nLe package tabloid fournit un ensemble d efonctions utiles à la réalisation de tableaux statistiques. La première fonction à employer est tab_build().\n\n\n\n\n\n\nLa fonction tab_build()\n\n\n\nLes paramètres:\n\nvar_rows: les variables de comptage ventilée en lignes (entre quotes),\nvar_cols: les variables de comptage ventilée en colonnes (entre quotes),\nvar_stat: la variable de comptage,\nstat: la statistique à utiliser (par défaut “count”):\n\n“mean” : moyenne,\n“min” : minimum,\n“max” : maximum,\n“median” : médiane,\n“sum” : somme,\n“quantile” : quantile,\n“weighted_mean” : moyenne pondérée,\n“weighted_sum” : somme pondérée\n\nvar_w: la variable de pondération,\nprobs: quantile à calculer si stat est “quantile”,\nlab_total: Le texte pour la marge (par défaut “Ensemble”)\n\n\n\nOn réalise un tri à plat sur la variable MODCOHA.\n\n\n\ntab1 &lt;- grandile %&gt;% \n  tab_build(var_rows = \"MODCOHA\")\ntab1\n\n# A tibble: 6 × 2\n  MODCOHA                   count\n  &lt;chr&gt;                     &lt;dbl&gt;\n1 4 - Couple sans enfant     1393\n2 1 - Ménage d'une personne  1766\n3 2 - Couple avec enfant(s)  1533\n4 5 - Autres                  303\n5 3 - Famille monoparentale   423\n6 Ensemble                   5418\n\n\n\nTable 1: Répartition des ménages de grandile selon le mode de cohabitation\n\n\n\n\n\n\n\n\n\nOrdre des modalités\n\n\n\nOn remarque que les modalités ne s’affichent pas dans l’ordre alphanumérique croissant. Il faut trier la table au préalable:\n\n\n\ntab1 &lt;- grandile %&gt;% \n  arrange(MODCOHA) %&gt;% \n  tab_build(var_rows = \"MODCOHA\")\ntab1\n\n# A tibble: 6 × 2\n  MODCOHA                   count\n  &lt;chr&gt;                     &lt;dbl&gt;\n1 1 - Ménage d'une personne  1766\n2 2 - Couple avec enfant(s)  1533\n3 3 - Famille monoparentale   423\n4 4 - Couple sans enfant     1393\n5 5 - Autres                  303\n6 Ensemble                   5418\n\n\n\nTable 2: Répartition des ménages de grandile selon le mode de cohabitation\n\n\n\n\n\n\nProfil colonne\nLa fonction tab_pct() calcule les profils lignes ou colonnes.\n\n\n\n\n\n\nPour un profil ligne\n#| label: exemple-tabpct1\ntab %&gt;%\n  tab_pct(\n    pct = \"row\"\n  )\n\n\nPour un profil colonne\n#| label: exemple-tabpct1\ntab %&gt;%\n  tab_pct(\n    pct = \"col\"\n  )\n\n\n\nTransformons notre tableau de comptage en calculant les parts de chaque modalités dans la population de Grandile:\n\n\n\ntab1b &lt;- tab1 %&gt;% \n  tab_pct(\n    pct = \"col\"\n  )\ntab1b\n\n# A tibble: 6 × 2\n  MODCOHA                    count\n  &lt;chr&gt;                      &lt;dbl&gt;\n1 1 - Ménage d'une personne  32.6 \n2 2 - Couple avec enfant(s)  28.3 \n3 3 - Famille monoparentale   7.81\n4 4 - Couple sans enfant     25.7 \n5 5 - Autres                  5.59\n6 Ensemble                  100   \n\n\n\nTable 3: Répartition des ménages de grandile selon le mode de cohabitation\n\n\n\n\n\nAffichage d’arrondis\nLa fonction tab_round() permet d’arrondir les données des cellules, et éventuellement de gérer la cohérence des sommes à 100 % pour les pourcentages lignes et colonnes, en proposant différentes règles de décision.\n\n\n\n\n\n\nCaution\n\n\n\ntab_round(\n  tab,\n  n = 0,\n  guarantee_100 = FALSE,\n  option = \"lowest_lie\",\n  verbose = FALSE\n)\n\nn: indique le nombre de décimales à afficher\nguarantee_100: gère la cohérence des arrondis\noption: comment la garantie à 100 va être supportée\nverbose: affiche dans la console des informations sur le traitement\n\n\n\nArrondissons le tableau précédent à une décimale:\n\n\n\ntab1c &lt;- tab1b %&gt;% \n  tab_round(\n    n = 1\n  ) \ntab1c\n\n# A tibble: 6 × 2\n  MODCOHA                   count\n* &lt;chr&gt;                     &lt;dbl&gt;\n1 1 - Ménage d'une personne  32.6\n2 2 - Couple avec enfant(s)  28.3\n3 3 - Famille monoparentale   7.8\n4 4 - Couple sans enfant     25.7\n5 5 - Autres                  5.6\n6 Ensemble                  100  \n\n\n\nTable 4\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nLa console n’affiche pas toutes les décimales, par exemple:\n\ntab1b %&gt;% \n  tab_round(\n    n = 3\n  ) \n\n# A tibble: 6 × 2\n  MODCOHA                    count\n* &lt;chr&gt;                      &lt;dbl&gt;\n1 1 - Ménage d'une personne  32.6 \n2 2 - Couple avec enfant(s)  28.3 \n3 3 - Famille monoparentale   7.81\n4 4 - Couple sans enfant     25.7 \n5 5 - Autres                  5.59\n6 Ensemble                  100   \n\n\nIl faut préciser le nombre de chiffres affichés (par exemple 7) grâce à la commande pillar::pillar_options() (voir Müller and Wickham (2024)). La commande options(old) permet de revenir au paramétrage initial.\n\nold &lt;- options(pillar.sigfig = 7)\n\ntab1b %&gt;% \n  tab_round(\n    n = 3,\n    guarantee_100 = FALSE\n  ) \n\n# A tibble: 6 × 2\n  MODCOHA                     count\n* &lt;chr&gt;                       &lt;dbl&gt;\n1 1 - Ménage d'une personne  32.595\n2 2 - Couple avec enfant(s)  28.295\n3 3 - Famille monoparentale   7.807\n4 4 - Couple sans enfant     25.711\n5 5 - Autres                  5.592\n6 Ensemble                  100    \n\noptions(old)\n\n\n\n\n\nMasquer des cellules\ntab_mask() permet de masquer les cellules d’un tableau :\nles cellules non-nulles inférieures à un seuil, en nombre de lignes ou en somme de la variable var_stat\n\nles cellules correspondant aux marges\ntab_mask(\n  tab,\n  threshold_count = NULL,\n  threshold_sum = NULL,\n  mask_total = \"\",\n  verbose = TRUE\n)\n\nthreshold_count: nombre de lignes de la table initiale en-deça duquel la valeur est masquée (exclusif)\nthreshold_sum: à renseigner pour stat = sum, valeur de la cellule en-deça de laquelle la valeur est masquée (exclusif)\nmask_total: masquage ou non des totaux:\n\n“cols” : masquage des totaux en colonnes\n“rows” : masquage des totaux en lignes\nc(“rows”, “cols”) : masquage de l’ensemble des totaux\n\nverbose: affichage ou non du nombre de cellules masquées par la fonction\n\nMasquons les modalités comprenant moins de 500 individus, sans masquer le total:\n\n\n\ntab1 %&gt;% \n  tab_mask(\n    threshold_count = 500\n  )\n\n0 cellules ne sont pas masquées mais concernent zéro ligne.\n\n\n2 cellules sont masquées car concernent trop peu de lignes.\n\n\n# A tibble: 6 × 2\n  MODCOHA                   count\n  &lt;chr&gt;                     &lt;dbl&gt;\n1 1 - Ménage d'une personne  1766\n2 2 - Couple avec enfant(s)  1533\n3 3 - Famille monoparentale    NA\n4 4 - Couple sans enfant     1393\n5 5 - Autres                   NA\n6 Ensemble                   5418\n\n\n\nTable 5\n\n\n\n\n\nExporter un tableau\n\nExport vers Calc\n\n\nDocument Quarto",
+    "crumbs": [
+      "Réaliser un tableau"
+    ]
+  },
+  {
+    "objectID": "exemples.html#tableaux-de-contingence",
+    "href": "exemples.html#tableaux-de-contingence",
+    "title": "Réaliser un tableau",
+    "section": "Tableaux de contingence",
+    "text": "Tableaux de contingence",
+    "crumbs": [
+      "Réaliser un tableau"
+    ]
+  },
+  {
+    "objectID": "exemples.html#tableaux-de-moyennes",
+    "href": "exemples.html#tableaux-de-moyennes",
+    "title": "Réaliser un tableau",
+    "section": "Tableaux de moyennes",
+    "text": "Tableaux de moyennes",
+    "crumbs": [
+      "Réaliser un tableau"
+    ]
+  },
+  {
+    "objectID": "exemples.html#variable-pondérée",
+    "href": "exemples.html#variable-pondérée",
+    "title": "Réaliser un tableau",
+    "section": "Variable pondérée",
+    "text": "Variable pondérée",
+    "crumbs": [
+      "Réaliser un tableau"
+    ]
+  },
+  {
+    "objectID": "exemples.html#exporter-un-tableau-1",
+    "href": "exemples.html#exporter-un-tableau-1",
+    "title": "Réaliser un tableau",
+    "section": "Exporter un tableau",
+    "text": "Exporter un tableau\n\n\n\n\nMüller, Kirill, and Hadley Wickham. 2024. Controlling Display of Numbers. https://tibble.tidyverse.org/articles/numbers.html.",
+    "crumbs": [
+      "Réaliser un tableau"
+    ]
+  },
+  {
+    "objectID": "exercices.html",
+    "href": "exercices.html",
+    "title": "Exercices",
+    "section": "",
+    "text": "Exercice 1",
+    "crumbs": [
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "exercices.html#exercice-2",
+    "href": "exercices.html#exercice-2",
+    "title": "Exercices",
+    "section": "Exercice 2",
+    "text": "Exercice 2",
+    "crumbs": [
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "exercices.html#exercice-3",
+    "href": "exercices.html#exercice-3",
+    "title": "Exercices",
+    "section": "Exercice 3",
+    "text": "Exercice 3",
+    "crumbs": [
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "exercices.html#exercice-4",
+    "href": "exercices.html#exercice-4",
+    "title": "Exercices",
+    "section": "Exercice 4",
+    "text": "Exercice 4",
+    "crumbs": [
+      "Exercices"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Fontaine, Maëlle, and Laurette Cretin. 2024. Tabloid: Creation de\nTableaux Croises. https://inseefrlab.github.io/tabloid/.\n\n\nMüller, Kirill, and Hadley Wickham. 2024. Controlling Display of\nNumbers. https://tibble.tidyverse.org/articles/numbers.html.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]

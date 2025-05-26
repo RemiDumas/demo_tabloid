@@ -1,7 +1,9 @@
-# Summary
+# Exercices {.unnumbered}
 
-In summary, this book has no content whatsoever.
+## Exercice 1 {.unnumbered}
 
-```{r}
-1 + 1
-```
+## Exercice 2 {.unnumbered}
+
+## Exercice 3 {.unnumbered}
+
+## Exercice 4 {.unnumbered}

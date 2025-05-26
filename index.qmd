@@ -1,9 +1,5 @@
-# Preface {.unnumbered}
+# Accueil {.unnumbered}
 
-This is a Quarto book.
+Support pour la démo du package tabloid (durée 1h30)
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```
+![](intro.png){style="display: block;     margin: auto;"}{style = "margin: auto;"}
