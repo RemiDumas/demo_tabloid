@@ -2,4 +2,4 @@
 
 Support pour la démo du package tabloid (durée 1h30)
 
-![](intro.png){style="display: block;     margin: auto;"}{style = "margin: auto;"}
+![](intro.png){style="display: block;     margin: auto;"}

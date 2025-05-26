@@ -60,4 +60,6 @@ rsconnect/
 
 /.quarto/
 
-/_sorties/
+_sorties/
+
+_book/

@@ -199,6 +199,7 @@ tab1 %>%
 
 ### Exporter un tableau
 Le package présente deux options pour exporter les tableaux générés.
+
 #### Export vers Calc
 La fonction tab_xlsx() permet d'enregistrer le tableau mis en forme dans un fichier .xlsx.
 
