@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Introduction – Démo du package Tabloid</title>
+<title>Le package Tabloid – Démo du package Tabloid</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -85,7 +85,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./exercices.html" rel="next">
+<link href="./exemples.html" rel="next">
 <link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -137,7 +137,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html">Le package Tabloid</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -165,19 +165,25 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Preface</span></a>
+ <span class="menu-text">Accueil</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text">Le package Tabloid</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./exemples.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Réaliser un tableau</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./exercices.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text">Exercices</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -191,15 +197,24 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+    <h2 id="toc-title">Navigation</h2>
+   
+  <ul>
+  <li><a href="#fonctionnalités" id="toc-fonctionnalités" class="nav-link active" data-scroll-target="#fonctionnalités">Fonctionnalités</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation">Installation</a></li>
+  <li><a href="#les-données-utilisées" id="toc-les-données-utilisées" class="nav-link" data-scroll-target="#les-données-utilisées">Les données utilisées</a></li>
+  <li><a href="#résumé" id="toc-résumé" class="nav-link" data-scroll-target="#résumé">Résumé</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></h1>
+<h1 class="title">Le package Tabloid</h1>
 </div>
 
 
@@ -216,21 +231,56 @@ div.csl-indent {
 </header>
 
 
-<p>This is a book created from markdown and executable code.</p>
-<p>See <span class="citation" data-cites="knuth84">Knuth (<a href="references.html#ref-knuth84" role="doc-biblioref">1984</a>)</span> for additional discussion of literate programming.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<p>Ce package (<span class="citation" data-cites="citeTabloid">Fontaine and Cretin (<a href="references.html#ref-citeTabloid" role="doc-biblioref">2024</a>)</span>) propose un ensemble de fonctions consistantes qui simplifient la création de tableaux statistiques. Il est développé par <a href="mailto:laurette.cretin@insee.fr">Laurette Crétin</a> et <a href="https://github.com/maellefontaine2">Maelle Fontaine</a>.</p>
+<ul>
+<li>Le dépôt Github: <a href="https://github.com/InseeFrLab/tabloid" class="uri">https://github.com/InseeFrLab/tabloid</a></li>
+<li>La page vignette contenant quelques articles: <a href="https://inseefrlab.github.io/tabloid/" class="uri">https://inseefrlab.github.io/tabloid/</a></li>
+</ul>
+<section id="fonctionnalités" class="level2">
+<h2 class="anchored" data-anchor-id="fonctionnalités">Fonctionnalités</h2>
+<ul>
+<li>Créer un tableau à partir de n’importe quel croisement et n’importe quelle statistique pondérée ou pas.</li>
+<li>Calculer les marges</li>
+<li>Afficher les profils lignes ou colonnes</li>
+<li>Masquer des cellules</li>
+<li>Avertir si les effectifs sont peu nombreux</li>
+<li>Exporter au format xlsx ou html</li>
+</ul>
+</section>
+<section id="installation" class="level2">
+<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<p>La procédure d’installation dépend de l’environnement dans lequel se trouve <code>R</code></p>
+<p>1️⃣ <strong>Accès à internet: depuis <code>Github</code></strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"inseefrlab/tabloid"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>2️⃣ __Pas d’accès à internet (AUS, LS3…): depuis un <code>Gitlab</code> interne :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_git</span>(<span class="st">"https://gitlab.insee.fr/espace-charges-etudes/boite-outils/tableaux"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                     <span class="at">dependencies =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="les-données-utilisées" class="level2">
+<h2 class="anchored" data-anchor-id="les-données-utilisées">Les données utilisées</h2>
+<p>Le package est accompagné d’un extrait de la <a href="https://inseefrlab.github.io/tabloid/reference/prenoms.html">base des prénoms</a>. Les exemples contenus dans la vignette du package sont construits en utilisant ce jeu de données.</p>
+<p>Pour avoir un ensemble d’exemples supplémentaires, nous allons utiliser:</p>
+<ul>
+<li><a href="https://raw.githubusercontent.com/RemiDumas/demo_tabloid/refs/heads/main/donnees/grandile.rds">grandile</a></li>
+<li><a href="https://raw.githubusercontent.com/RemiDumas/demo_tabloid/refs/heads/main/donnees/gapminder.rds">gapminder</a></li>
+</ul>
+</section>
+<section id="résumé" class="level2">
+<h2 class="anchored" data-anchor-id="résumé">Résumé</h2>
+<p><img src="schema_tab.png" class="img-fluid"></p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-knuth84" class="csl-entry" role="listitem">
-Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
+<div id="ref-citeTabloid" class="csl-entry" role="listitem">
+Fontaine, Maëlle, and Laurette Cretin. 2024. <em>Tabloid: Creation de Tableaux Croises</em>. <a href="https://inseefrlab.github.io/tabloid/">https://inseefrlab.github.io/tabloid/</a>.
 </div>
 </div>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -634,13 +684,13 @@ Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="./index.html" class="pagination-link" aria-label="Accueil">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Accueil</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./exercices.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./exemples.html" class="pagination-link" aria-label="Réaliser un tableau">
+        <span class="nav-page-text">Réaliser un tableau</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
