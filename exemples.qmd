@@ -52,7 +52,7 @@ On réalise un tri à plat sur la variable MODCOHA.
 
 ```{r}
 #| label: tbl-modcoha1
-#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+#| tbl-cap: Répartition des ménages de Grandile selon le mode de cohabitation
 tab1 <- grandile %>% 
   tab_build(var_rows = "MODCOHA")
 tab1
@@ -63,7 +63,7 @@ tab1
 On remarque que les modalités ne s'affichent pas dans l'ordre alphanumérique croissant. Il faut trier la table au préalable:
 ```{r}
 #| label: tbl-modcoha2
-#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+#| tbl-cap: Répartition des ménages de Grandile selon le mode de cohabitation
 tab1 <- grandile %>% 
   arrange(MODCOHA) %>% 
   tab_build(var_rows = "MODCOHA")
@@ -98,7 +98,7 @@ tab %>%
 Transformons notre tableau de comptage en calculant les parts de chaque modalités dans la population de Grandile:
 ```{r}
 #| label: tbl-modcoha3
-#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+#| tbl-cap: Répartition des ménages de Grandile selon le mode de cohabitation
 tab1b <- tab1 %>% 
   tab_pct(
     pct = "col"
@@ -130,7 +130,7 @@ Arrondissons le tableau précédent à une décimale:
 
 ```{r}
 #| label: tbl-modcoha4
-#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+#| tbl-cap: Répartition des ménages de Grandile selon le mode de cohabitation
 tab1c <- tab1b %>% 
   tab_round(
     n = 1
@@ -189,7 +189,7 @@ tab_mask(
 Masquons les modalités comprenant moins de 500 individus, sans masquer le total:
 ```{r}
 #| label: tbl-modcoha5
-#| tbl-cap: Répartition des ménages de grandile selon le mode de cohabitation
+#| tbl-cap: Répartition des ménages de Grandile selon le mode de cohabitation
 
 tab1 %>% 
   tab_mask(
@@ -229,6 +229,7 @@ tab_xlsx(
 Exportons notre tableau dans un sous répertoire. Donnons lui un titre, une source et modifions le nom de la variable `MODCOHA` en *Mode de cohabitation*.
 
 ```{r}
+#| eval: false
 #| label: exportxlsx
 if(!dir.exists("_sorties")){dir.create("_sorties")}
 
@@ -236,13 +237,32 @@ tab1c %>%
   tab_xlsx(
     path = "_sorties/tableaux.xlsx", 
     sheet = "MODCOHA",
-    title = "Répartition des ménages de grandile selon le mode de cohabitation",
+    title = "Répartition des ménages de Grandile selon le mode de cohabitation",
     note = "Source: Cefil 2025",
     lab_rows = "Mode de cohabitation"
     )
 ```
 
 #### Document Quarto
+Il suffit d'inclure le code `tabloid` dans un chunk. Par exemple, le tri à plat des ménages de Grandile par mode de cohabitation.
+
+```{r}
+#| label: tbl-modcoha6
+tab1 %>% 
+  rename(Effectif = count) %>% 
+  left_join(
+  tab1b %>% 
+    tab_round(
+      n = 1
+    ) %>% 
+    rename('Part (en %)' = count)
+  ) %>% 
+  tab_render(
+    title = "Répartition des ménages de Grandile selon le mode de cohabitation",
+    note= "Source: Cefil 2025",
+    lab_rows = "Mode de cohabitation"
+  )
+```
 
 
 ## Tableaux de contingence
