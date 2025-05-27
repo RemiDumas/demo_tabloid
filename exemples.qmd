@@ -6,6 +6,7 @@
 library('dplyr')
 library('tabloid')
 library('tidyr')
+library('gt')
 grandile <- readRDS('donnees/grandile.rds')
 gapminder <- readRDS('donnees/gapminder.rds')
 ```
@@ -345,7 +346,7 @@ tab4 %>%
 ## Tableaux en évolution
 
 ### Une seule variable d'interêt
-Nous allons réaliser un tableau des populations des pays d'Europe de l'Ouest (région "Western Europe") en 1990 et 2010 à partir des données de Gapminder. 
+Nous allons réaliser un tableau des populations des pays d'Europe de l'Ouest (région "Western Europe") en 1990 et 2010 à partir des données de Gapminder (voir @citegapminder). 
 
 Tout d'abord chargeons le jeu de données.
 
@@ -379,7 +380,7 @@ tab5 <- gapminder %>%
 tab5
 ```
 
-Nous disposons de la marge en colonne, qui n'a pas de sens pour une série chronologique. Heurequement, l'objet tab5 peut être modifié, car c'est un tibble !
+Nous disposons de la marge en colonne, qui n'a pas de sens pour une série chronologique. Heureusement, l'objet `tab5` peut être modifié, car c'est un tibble !
 
 ```{r}
 #| label: pop9015WE2
@@ -438,7 +439,7 @@ datatab6 <- gapminder %>%
 La fonction `pivot_longer(`) transforme les données (plus exactement les colonnes `gdp` et `population`) ce qui nous sera utile lorsque l'on voudra utiliser `tabloid`. En effet, dans le code ci-dessous, vous remarquez que si les pays (classés par ordre alphabétique) sont en lignes (paramètre `var_rows =`), les colonnes prennent comme variable l'année (`year`) et l'indicateur (`gdp` ou `population`) transformé en longueur par `pivot_longer()`. On n'oubliera pas d'enlever toutes les colonnes dont le nom termine par *"Ensemble"*.
 
 ```{r}
-#| label: gdppop9915WE
+#| label: gdppop9910WE
 tab6 <- datatab6 %>% 
   tab_build(
     var_rows = country,
@@ -453,7 +454,7 @@ tab6
 On effectue un rendu du tableau:
 
 ```{r}
-#| label: tbl-gdppop9915WE
+#| label: tbl-gdppop9910WE
 tab6 %>% 
   tab_render(
     title = "Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010",
@@ -512,15 +513,60 @@ tab7 <- tab7 %>%
 
 tab7 %>% 
   tab_render(
-    title = "Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2001",
+    title = "Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2010",
     note = "Source: Gapminder",
     lab_rows = "Pays"
   )
 ```
 :::
 
-## TODO
+## Compléments sur la mise en forme
 
 ### Utilisation de kableExtra pour mettre en forme un rendu html
+L’objet généré par la fonction `tab_render()` étant un `kable`, on peut le modifier avec `kableExtra` et formater les cellules, en incluant des conditions, gérer les largeurs de colonnes, les notes de bas de tableau, les renvois, etc ...(voir @citekableExtra)
 
-### Utiliser gt() plutôt que tab_render()
+Par exemple, avec le @tbl-gdppop9910WE on peut ajouter:
+
+```{r}
+library('kableExtra')
+tab6 %>% 
+  tab_render(
+    title = "Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010",
+    note = "Source: Gapminder",
+    lab_rows = "Pays",
+    lab_cols = list(indic = c("PIB", "Population"))
+  ) %>% 
+  column_spec(4:5, bold = T,background = "ivory2") %>% 
+  row_spec(3, bold = TRUE, italic = TRUE, color = "white", background = "steelblue1")%>% 
+  row_spec(4, color = "tan3") 
+```
+
+
+### Utiliser `gt()` plutôt que `tab_render()`
+
+On peut préférer `gt` (voir @citegt) pour générer les rendus de tableaux, et ne conserver que la partie computationnelle de `tabloid`.
+
+```{r}
+#| eval: false
+
+library('gt')
+```
+
+```{r}
+#| label: gttabloid
+tab5 %>% 
+  gt() %>% 
+  fmt_number(locale = "fr", decimals = 0) %>% 
+  cols_label(
+    country = "Pays"
+  ) %>% 
+  tab_header(
+    title = "Évolution de la population des pays d'Europe de l'Ouest entre 1990 et 2010"
+  ) %>% 
+  tab_source_note(
+    source_note = "Source: Gapminder"
+  ) %>%  
+  tab_style(style = list(cell_fill(color = "lightgrey"), cell_text(weight = "bold")), 
+            locations =list(cells_body(columns = "2010"), cells_body(rows = country == "Ensemble")))
+```
+

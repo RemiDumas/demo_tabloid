@@ -1,9 +1,159 @@
 # Exercices {.unnumbered}
 
+```{r}
+#| include: false
+#| label: packagesdonneesexos
+library('dplyr')
+library('tabloid')
+library('tidyr')
+grandile <- readRDS('donnees/grandile.rds')
+gapminder <- readRDS('donnees/gapminder.rds')
+```
+
 ## Exercice 1 {.unnumbered}
+Réalisez un tri à plat de la PCS de la personne de référence des ménages de Grandile en affichant les parts sous forme de pourcentage à une décimale. Titrez et sourcez le tableau au format html.
+
+```{r}
+#| label: PCSpct
+#| eval: false
+#| code-fold: true
+#| code-summary: "Solution"
+
+grandile %>% 
+  arrange(PCS) %>% 
+  tab_build(
+    var_rows = PCS
+  ) %>% 
+  tab_pct(pct = "col") %>% 
+  tab_round(n = 1) %>% 
+  tab_render(lab_rows = "PCS de la personne de référence du ménage",
+             note = "Source: Cefil")
+```
 
 ## Exercice 2 {.unnumbered}
+Réalisez un tableau affichant la moyenne des revenus des ménages de Grandile par niveau de diplôme. Vous arrondirez à la centaine d'euros Titrez et sourcez le tableau au format html.
+
+```{r}
+#| label: DIPLrevenumoy
+#| eval: false
+#| code-fold: true
+#| code-summary: "Solution"
+
+grandile %>% 
+  arrange(DIPL) %>% 
+  tab_build(
+    var_rows = DIPL,
+    var_stat = REVENU,
+    stat = "mean"
+  ) %>% 
+  tab_round(
+    n=-2
+  ) %>% 
+  tab_render(
+    title = "Revenu moyen par niveau de diplôme des ménages de Grandile",
+    note = "Source: Cefil",
+    lab_rows = "Niveau de diplôme")
+```
 
 ## Exercice 3 {.unnumbered}
+Construisez un tableau de l'âge médian (arrondi à l'entier) des personnes de références des ménages de Grandile selon la PCS.
+
+```{r}
+#| label: PCSagemedian
+#| eval: false
+#| code-fold: true
+#| code-summary: "Solution"
+grandile %>% 
+  arrange(PCS) %>% 
+  tab_build(
+    var_rows = PCS,
+    var_stat = AGE,
+    stat = "median"
+  )%>% 
+  tab_round(
+    n = 0
+  ) %>% 
+  tab_render(
+    title = "Âge médian des personnes de référence des ménages de Grandile selon la PCS",
+    note = "Source: Cefil")
+```
 
 ## Exercice 4 {.unnumbered}
+
+Réalisez un tableau de structure (en % arrondi à une décimale) des PCS selon le secteur d'activité des ménages de Grandile. Titrez et Sourcez le rendu html.
+
+```{r}
+#| label: PCSACTpctligne
+#| eval: false
+#| code-fold: true
+#| code-summary: "Solution"
+grandile %>% 
+  arrange(PCS, ACT) %>% 
+  tab_build(
+    var_rows = PCS,
+    var_cols = ACT,
+    stat = "count"
+  ) %>% 
+  tab_pct(pct = "row") %>% 
+  tab_round(
+    n = 1
+  ) %>% 
+  tab_render(
+    title = "PCS selon le Secteur d'activité des ménages de Grandile",
+    note = "Source: Cefil")
+```
+
+
+## Exercice 5 {.unnumbered}
+A partir des données de Gapminder, construisez le tableau suivant:
+```{r}
+#| echo: false
+
+gapminder %>% 
+  mutate(year = as.character(year),
+         gdpM = gdp/1E9) %>% 
+  filter(year %in% c(1960, 1970, 1980, 1990, 2000, 2010)) %>% 
+  arrange(continent) %>% 
+  tab_build(
+    var_rows = continent,
+    var_cols = year,
+    var_stat = gdpM,
+    var_w = population,
+    stat = "weighted_mean"
+  ) %>% 
+  select(-"Ensemble") %>% 
+  tab_round(n = 1) %>% 
+  tab_render(title = "PIB par continent en Milliards de $",
+             note = "Source: Gapminder",
+             lab_rows = "Continent")
+```
+
+```{r}
+#| label: gdpMcontinent
+#| eval: false
+#| code-fold: true
+#| code-summary: "Solution"
+
+gapminder %>% 
+  mutate(year = as.character(year),
+         gdpM = gdp/1E9) %>% 
+  filter(year %in% c(1960, 1970, 1980, 1990, 2000, 2010)) %>% 
+  arrange(continent) %>% 
+  tab_build(
+    var_rows = continent,
+    var_cols = year,
+    var_stat = gdpM,
+    var_w = population,
+    stat = "weighted_mean"
+  ) %>% 
+  select(-"Ensemble") %>% 
+  tab_round(n = 1) %>% 
+  tab_render(title = "PIB par continent en Milliards de $",
+             note = "Source: Gapminder",
+             lab_rows = "Continent")
+```
+
+
+## Exercice 6 {.unnumbered}
+
+Réalisez le tableau de moyenne pondérée de votre choix à partir des données des ménages de Grandile.
