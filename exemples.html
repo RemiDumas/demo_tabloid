@@ -624,7 +624,11 @@ Table&nbsp;5: Répartition des ménages de Grandile selon le mode de cohabitatio
 <span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Le résultat:</p>
-<p><img src="exportxlsx.jpg" class="img-fluid" style="display: block; margin: auto;"> #### Document Quarto Il suffit d’inclure la fonction <code>tab_render()</code> à la suite de la production du tableau dans un chunk. Par exemple, le tri à plat des ménages de Grandile par mode de cohabitation.</p>
+<p><img src="exportxlsx.jpg" class="img-fluid" style="display: block; margin: auto;"></p>
+</section>
+<section id="document-quarto" class="level4">
+<h4 class="anchored" data-anchor-id="document-quarto">Document Quarto</h4>
+<p>Il suffit d’inclure la fonction <code>tab_render()</code> à la suite de la production du tableau dans un chunk. Par exemple, le tri à plat des ménages de Grandile par mode de cohabitation.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>tab1 <span class="sc">%&gt;%</span> </span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Effectif =</span> count) <span class="sc">%&gt;%</span> </span>
@@ -897,9 +901,11 @@ Table&nbsp;7: Croisement entre le diplôme et la PCS de la personne de référen
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(PCS) <span class="sc">%&gt;%</span> </span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(<span class="at">var_rows =</span> PCS,</span>
 <span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">var_stat =</span> NBPERS,</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">stat =</span> <span class="st">"mean"</span>)</span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>tab3 <span class="sc">%&gt;%</span> </span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">stat =</span> <span class="st">"mean"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(<span class="at">n =</span> <span class="dv">1</span>) </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>tab3 <span class="sc">%&gt;%</span> </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-NBPERSPCS" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-caption="Nombre de personnes vivant dans les ménages de Grandile selon la PCS de la personne de référence">
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-NBPERSPCS-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -914,39 +920,39 @@ Table&nbsp;7: Croisement entre le diplôme et la PCS de la personne de référen
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1 - Agriculteurs exploitants</td>
-<td style="text-align: center;">2,540230</td>
+<td style="text-align: center;">2,5</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2 - Artisans, commerçants, chefs d'entreprise</td>
-<td style="text-align: center;">2,546125</td>
+<td style="text-align: center;">2,5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">3 - Cadres, professions intellectuelles supérieures</td>
-<td style="text-align: center;">2,584615</td>
+<td style="text-align: center;">2,6</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">4 - Professions intermédiaires</td>
-<td style="text-align: center;">2,540576</td>
+<td style="text-align: center;">2,5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">5 - Employés</td>
-<td style="text-align: center;">2,584270</td>
+<td style="text-align: center;">2,6</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">6 - Ouvriers</td>
-<td style="text-align: center;">2,571836</td>
+<td style="text-align: center;">2,6</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">7 - Inactifs ayant déjà travaillé</td>
-<td style="text-align: center;">1,977846</td>
+<td style="text-align: center;">2,0</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">8 - Autres sans activité professionnelle</td>
-<td style="text-align: center;">1,874214</td>
+<td style="text-align: center;">1,9</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
-<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">2,328719</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">2,3</td>
 </tr>
 </tbody><tfoot>
 <tr class="odd">
@@ -976,9 +982,11 @@ Table&nbsp;8
 <span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_stat =</span> REVENU,</span>
 <span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_w =</span> NBPERS,</span>
 <span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"weighted_mean"</span></span>
-<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>tab4 <span class="sc">%&gt;%</span> </span>
-<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(<span class="at">n =</span> <span class="sc">-</span><span class="dv">2</span>) <span class="co"># arrondi à la centaine d'€</span></span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-11"><a href="#cb29-11" aria-hidden="true" tabindex="-1"></a>tab4 <span class="sc">%&gt;%</span> </span>
+<span id="cb29-12"><a href="#cb29-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="tbl-REVENUmoyPCS" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-caption="Revenu moyen des individus de de Grandile selon la PCS de la personne de référence">
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-REVENUmoyPCS-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -993,39 +1001,39 @@ Table&nbsp;8
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1 - Agriculteurs exploitants</td>
-<td style="text-align: center;">47 374,71</td>
+<td style="text-align: center;">47 400</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2 - Artisans, commerçants, chefs d'entreprise</td>
-<td style="text-align: center;">132 373,37</td>
+<td style="text-align: center;">132 400</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">3 - Cadres, professions intellectuelles supérieures</td>
-<td style="text-align: center;">121 288,38</td>
+<td style="text-align: center;">121 300</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">4 - Professions intermédiaires</td>
-<td style="text-align: center;">62 621,47</td>
+<td style="text-align: center;">62 600</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">5 - Employés</td>
-<td style="text-align: center;">36 698,46</td>
+<td style="text-align: center;">36 700</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">6 - Ouvriers</td>
-<td style="text-align: center;">44 142,00</td>
+<td style="text-align: center;">44 100</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">7 - Inactifs ayant déjà travaillé</td>
-<td style="text-align: center;">19 349,94</td>
+<td style="text-align: center;">19 300</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">8 - Autres sans activité professionnelle</td>
-<td style="text-align: center;">14 634,00</td>
+<td style="text-align: center;">14 600</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
-<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">50 728,47</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">50 700</td>
 </tr>
 </tbody><tfoot>
 <tr class="odd">
@@ -2047,23 +2055,23 @@ Supprimer la ligne Ensemble
 <span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>), <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)), </span>
 <span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">locations =</span><span class="fu">list</span>(<span class="fu">cells_body</span>(<span class="at">columns =</span> <span class="st">"2010"</span>), <span class="fu">cells_body</span>(<span class="at">rows =</span> country <span class="sc">==</span> <span class="st">"Ensemble"</span>)))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="wtavdydkat" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wtavdydkat table {
+<div id="westppzbmg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#westppzbmg table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wtavdydkat thead, #wtavdydkat tbody, #wtavdydkat tfoot, #wtavdydkat tr, #wtavdydkat td, #wtavdydkat th {
+#westppzbmg thead, #westppzbmg tbody, #westppzbmg tfoot, #westppzbmg tr, #westppzbmg td, #westppzbmg th {
   border-style: none;
 }
 
-#wtavdydkat p {
+#westppzbmg p {
   margin: 0;
   padding: 0;
 }
 
-#wtavdydkat .gt_table {
+#westppzbmg .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2089,12 +2097,12 @@ Supprimer la ligne Ensemble
   border-left-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_caption {
+#westppzbmg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wtavdydkat .gt_title {
+#westppzbmg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2106,7 +2114,7 @@ Supprimer la ligne Ensemble
   border-bottom-width: 0;
 }
 
-#wtavdydkat .gt_subtitle {
+#westppzbmg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2118,7 +2126,7 @@ Supprimer la ligne Ensemble
   border-top-width: 0;
 }
 
-#wtavdydkat .gt_heading {
+#westppzbmg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2130,13 +2138,13 @@ Supprimer la ligne Ensemble
   border-right-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_bottom_border {
+#westppzbmg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_col_headings {
+#westppzbmg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2151,7 +2159,7 @@ Supprimer la ligne Ensemble
   border-right-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_col_heading {
+#westppzbmg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2171,7 +2179,7 @@ Supprimer la ligne Ensemble
   overflow-x: hidden;
 }
 
-#wtavdydkat .gt_column_spanner_outer {
+#westppzbmg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2183,15 +2191,15 @@ Supprimer la ligne Ensemble
   padding-right: 4px;
 }
 
-#wtavdydkat .gt_column_spanner_outer:first-child {
+#westppzbmg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wtavdydkat .gt_column_spanner_outer:last-child {
+#westppzbmg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wtavdydkat .gt_column_spanner {
+#westppzbmg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2203,11 +2211,11 @@ Supprimer la ligne Ensemble
   width: 100%;
 }
 
-#wtavdydkat .gt_spanner_row {
+#westppzbmg .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wtavdydkat .gt_group_heading {
+#westppzbmg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2233,7 +2241,7 @@ Supprimer la ligne Ensemble
   text-align: left;
 }
 
-#wtavdydkat .gt_empty_group_heading {
+#westppzbmg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2248,15 +2256,15 @@ Supprimer la ligne Ensemble
   vertical-align: middle;
 }
 
-#wtavdydkat .gt_from_md > :first-child {
+#westppzbmg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wtavdydkat .gt_from_md > :last-child {
+#westppzbmg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wtavdydkat .gt_row {
+#westppzbmg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2275,7 +2283,7 @@ Supprimer la ligne Ensemble
   overflow-x: hidden;
 }
 
-#wtavdydkat .gt_stub {
+#westppzbmg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2288,7 +2296,7 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#wtavdydkat .gt_stub_row_group {
+#westppzbmg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2302,15 +2310,15 @@ Supprimer la ligne Ensemble
   vertical-align: top;
 }
 
-#wtavdydkat .gt_row_group_first td {
+#westppzbmg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wtavdydkat .gt_row_group_first th {
+#westppzbmg .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wtavdydkat .gt_summary_row {
+#westppzbmg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2320,16 +2328,16 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#wtavdydkat .gt_first_summary_row {
+#westppzbmg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_first_summary_row.thick {
+#westppzbmg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wtavdydkat .gt_last_summary_row {
+#westppzbmg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2339,7 +2347,7 @@ Supprimer la ligne Ensemble
   border-bottom-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_grand_summary_row {
+#westppzbmg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2349,7 +2357,7 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#wtavdydkat .gt_first_grand_summary_row {
+#westppzbmg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2359,7 +2367,7 @@ Supprimer la ligne Ensemble
   border-top-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_last_grand_summary_row_top {
+#westppzbmg .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2369,11 +2377,11 @@ Supprimer la ligne Ensemble
   border-bottom-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_striped {
+#westppzbmg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wtavdydkat .gt_table_body {
+#westppzbmg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2382,7 +2390,7 @@ Supprimer la ligne Ensemble
   border-bottom-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_footnotes {
+#westppzbmg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2396,7 +2404,7 @@ Supprimer la ligne Ensemble
   border-right-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_footnote {
+#westppzbmg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2405,7 +2413,7 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#wtavdydkat .gt_sourcenotes {
+#westppzbmg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2419,7 +2427,7 @@ Supprimer la ligne Ensemble
   border-right-color: #D3D3D3;
 }
 
-#wtavdydkat .gt_sourcenote {
+#westppzbmg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2427,72 +2435,72 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#wtavdydkat .gt_left {
+#westppzbmg .gt_left {
   text-align: left;
 }
 
-#wtavdydkat .gt_center {
+#westppzbmg .gt_center {
   text-align: center;
 }
 
-#wtavdydkat .gt_right {
+#westppzbmg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wtavdydkat .gt_font_normal {
+#westppzbmg .gt_font_normal {
   font-weight: normal;
 }
 
-#wtavdydkat .gt_font_bold {
+#westppzbmg .gt_font_bold {
   font-weight: bold;
 }
 
-#wtavdydkat .gt_font_italic {
+#westppzbmg .gt_font_italic {
   font-style: italic;
 }
 
-#wtavdydkat .gt_super {
+#westppzbmg .gt_super {
   font-size: 65%;
 }
 
-#wtavdydkat .gt_footnote_marks {
+#westppzbmg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wtavdydkat .gt_asterisk {
+#westppzbmg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wtavdydkat .gt_indent_1 {
+#westppzbmg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wtavdydkat .gt_indent_2 {
+#westppzbmg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wtavdydkat .gt_indent_3 {
+#westppzbmg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wtavdydkat .gt_indent_4 {
+#westppzbmg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wtavdydkat .gt_indent_5 {
+#westppzbmg .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wtavdydkat .katex-display {
+#westppzbmg .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wtavdydkat div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#westppzbmg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
