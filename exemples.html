@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.31">
@@ -111,17 +111,17 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
   }
 }</script>
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
@@ -136,20 +136,20 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./exemples.html">Réaliser un tableau</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Basculer la barre latérale" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Recherche" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
@@ -159,7 +159,7 @@ div.csl-indent {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Recherche"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -212,15 +212,31 @@ div.csl-indent {
   <li><a href="#masquer-des-cellules" id="toc-masquer-des-cellules" class="nav-link" data-scroll-target="#masquer-des-cellules">Masquer des cellules</a></li>
   <li><a href="#exporter-un-tableau" id="toc-exporter-un-tableau" class="nav-link" data-scroll-target="#exporter-un-tableau">Exporter un tableau</a></li>
   </ul></li>
-  <li><a href="#tableaux-de-contingence" id="toc-tableaux-de-contingence" class="nav-link" data-scroll-target="#tableaux-de-contingence">Tableaux de contingence</a></li>
+  <li><a href="#tableaux-de-contingence" id="toc-tableaux-de-contingence" class="nav-link" data-scroll-target="#tableaux-de-contingence">Tableaux de contingence</a>
+  <ul class="collapse">
+  <li><a href="#croisement-entre-le-diplôme-et-la-pcs" id="toc-croisement-entre-le-diplôme-et-la-pcs" class="nav-link" data-scroll-target="#croisement-entre-le-diplôme-et-la-pcs">Croisement entre le diplôme et la PCS</a></li>
+  </ul></li>
+  <li><a href="#tableaux-dindicateurs-statistiques" id="toc-tableaux-dindicateurs-statistiques" class="nav-link" data-scroll-target="#tableaux-dindicateurs-statistiques">Tableaux d’indicateurs statistiques</a>
+  <ul class="collapse">
+  <li><a href="#tableaux-de-cumuls" id="toc-tableaux-de-cumuls" class="nav-link" data-scroll-target="#tableaux-de-cumuls">Tableaux de cumuls</a></li>
   <li><a href="#tableaux-de-moyennes" id="toc-tableaux-de-moyennes" class="nav-link" data-scroll-target="#tableaux-de-moyennes">Tableaux de moyennes</a></li>
-  <li><a href="#variable-pondérée" id="toc-variable-pondérée" class="nav-link" data-scroll-target="#variable-pondérée">Variable pondérée</a></li>
-  <li><a href="#exporter-un-tableau-1" id="toc-exporter-un-tableau-1" class="nav-link" data-scroll-target="#exporter-un-tableau-1">Exporter un tableau</a></li>
+  </ul></li>
+  <li><a href="#tableaux-en-évolution" id="toc-tableaux-en-évolution" class="nav-link" data-scroll-target="#tableaux-en-évolution">Tableaux en évolution</a>
+  <ul class="collapse">
+  <li><a href="#une-seule-variable-dinterêt" id="toc-une-seule-variable-dinterêt" class="nav-link" data-scroll-target="#une-seule-variable-dinterêt">Une seule variable d’interêt</a></li>
+  <li><a href="#deux-variables-dinterêt" id="toc-deux-variables-dinterêt" class="nav-link" data-scroll-target="#deux-variables-dinterêt">Deux variables d’interêt</a></li>
+  <li><a href="#série-chronologique" id="toc-série-chronologique" class="nav-link" data-scroll-target="#série-chronologique">Série chronologique</a></li>
+  </ul></li>
+  <li><a href="#todo" id="toc-todo" class="nav-link" data-scroll-target="#todo">TODO</a>
+  <ul class="collapse">
+  <li><a href="#utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html" id="toc-utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html" class="nav-link" data-scroll-target="#utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html">Utilisation de kableExtra pour mettre en forme un rendu html</a></li>
+  <li><a href="#utiliser-gt-plutôt-que-tab_render" id="toc-utiliser-gt-plutôt-que-tab_render" class="nav-link" data-scroll-target="#utiliser-gt-plutôt-que-tab_render">Utiliser gt() plutôt que tab_render()</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -229,7 +245,7 @@ div.csl-indent {
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -243,11 +259,12 @@ div.csl-indent {
 
 <section id="chargement-des-packages-et-des-données" class="level2">
 <h2 class="anchored" data-anchor-id="chargement-des-packages-et-des-données">Chargement des packages et des données</h2>
+<p>Nous aurons besoin des packages <code>tabloid</code> et <code>dplyr</code> pour le traitement des données (voir <span class="citation" data-cites="citedplyr">Wickham et al. (<a href="references.html#ref-citedplyr" role="doc-biblioref">2023</a>)</span>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'tabloid'</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>grandile <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'donnees/grandile.rds'</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(grandile)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(grandile)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -268,7 +285,7 @@ $ PATRIMOINE &lt;int&gt; 569054, 412947, 1848967, 403576, 2138502, 991147, 74523
 </section>
 <section id="réaliser-un-tri-à-plat" class="level2">
 <h2 class="anchored" data-anchor-id="réaliser-un-tri-à-plat">Réaliser un tri à plat</h2>
-<p>Le package tabloid fournit un ensemble d efonctions utiles à la réalisation de tableaux statistiques. La première fonction à employer est <code>tab_build()</code>.</p>
+<p>Le package tabloid fournit un ensemble de fonctions utiles à la réalisation de tableaux statistiques. La première fonction à employer est <code>tab_build()</code>.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -281,8 +298,8 @@ La fonction tab_build()
 <div class="callout-body-container callout-body">
 <p>Les paramètres:</p>
 <ul>
-<li><code>var_rows</code>: les variables de comptage ventilée en lignes (entre quotes),</li>
-<li><code>var_cols</code>: les variables de comptage ventilée en colonnes (entre quotes),</li>
+<li><code>var_rows</code>: les variables de comptage ventilée en lignes,</li>
+<li><code>var_cols</code>: les variables de comptage ventilée en colonnes,</li>
 <li><code>var_stat</code>: la variable de comptage,</li>
 <li><code>stat</code>: la statistique à utiliser (par défaut “count”):
 <ul>
@@ -306,8 +323,8 @@ La fonction tab_build()
 <figure class="quarto-float quarto-float-tbl figure">
 <div aria-describedby="tbl-modcoha1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>tab1 <span class="ot">&lt;-</span> grandile <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(<span class="at">var_rows =</span> <span class="st">"MODCOHA"</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tab1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(<span class="at">var_rows =</span> MODCOHA)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>tab1</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   MODCOHA                   count
@@ -341,8 +358,8 @@ Ordre des modalités
 <div aria-describedby="tbl-modcoha2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tab1 <span class="ot">&lt;-</span> grandile <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(MODCOHA) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(<span class="at">var_rows =</span> <span class="st">"MODCOHA"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>tab1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(<span class="at">var_rows =</span> MODCOHA)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>tab1</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   MODCOHA                   count
@@ -373,7 +390,7 @@ Table&nbsp;2: Répartition des ménages de Grandile selon le mode de cohabitatio
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>tab <span class="sc">%&gt;%</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pct</span>(</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct =</span> <span class="st">"row"</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="pour-un-profil-colonne" class="level4 quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <h4 class="anchored" data-anchor-id="pour-un-profil-colonne">Pour un profil colonne</h4>
@@ -381,7 +398,7 @@ Table&nbsp;2: Répartition des ménages de Grandile selon le mode de cohabitatio
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>tab <span class="sc">%&gt;%</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pct</span>(</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct =</span> <span class="st">"col"</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </div>
 </div>
@@ -393,7 +410,7 @@ Table&nbsp;2: Répartition des ménages de Grandile selon le mode de cohabitatio
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pct</span>(</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">pct =</span> <span class="st">"col"</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>tab1b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>tab1b</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   MODCOHA                    count
@@ -421,7 +438,7 @@ Table&nbsp;3: Répartition des ménages de Grandile selon le mode de cohabitatio
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Caution
+Mise en garde
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -431,7 +448,7 @@ Caution
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">guarantee_100 =</span> <span class="cn">FALSE</span>,</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">option =</span> <span class="st">"lowest_lie"</span>,</span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="cn">FALSE</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>n</code>: indique le nombre de décimales à afficher</li>
 <li><code>guarantee_100</code>: gère la cohérence des arrondis</li>
@@ -448,7 +465,7 @@ Caution
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">1</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  ) </span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>tab1c</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>tab1c</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   MODCOHA                   count
@@ -472,7 +489,7 @@ Table&nbsp;4: Répartition des ménages de Grandile selon le mode de cohabitatio
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Tip
+Astuce
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -481,7 +498,7 @@ Tip
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>tab1b <span class="sc">%&gt;%</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">3</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   MODCOHA                    count
@@ -494,7 +511,7 @@ Tip
 6 Ensemble                  100   </code></pre>
 </div>
 </div>
-<p>Il faut préciser le nombre de chiffres affichés (par exemple 7) grâce à la commande <code>pillar::pillar_options()</code> (voir <span class="citation" data-cites="pillaroptions">Müller and Wickham (<a href="references.html#ref-pillaroptions" role="doc-biblioref">2024</a>)</span>). La commande <code>options(old)</code> permet de revenir au paramétrage initial.</p>
+<p>Il faut préciser le nombre de chiffres affichés (par exemple 7) grâce à la commande <code>pillar::pillar_options()</code> (voir <span class="citation" data-cites="pillaroptions">Müller et Wickham (<a href="references.html#ref-pillaroptions" role="doc-biblioref">2024</a>)</span>). La commande <code>options(old)</code> permet de revenir au paramétrage initial.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>old <span class="ot">&lt;-</span> <span class="fu">options</span>(<span class="at">pillar.sigfig =</span> <span class="dv">7</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -502,7 +519,7 @@ Tip
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(</span>
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">3</span>,</span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">guarantee_100 =</span> <span class="cn">FALSE</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  ) </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   MODCOHA                     count
@@ -514,7 +531,7 @@ Tip
 5 5 - Autres                  5.592
 6 Ensemble                  100    </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(old)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(old)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -528,7 +545,7 @@ Tip
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">threshold_sum =</span> <span class="cn">NULL</span>,</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">mask_total =</span> <span class="st">""</span>,</span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">verbose =</span> <span class="cn">TRUE</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>threshold_count</code>: nombre de lignes de la table initiale en-deça duquel la valeur est masquée (exclusif)</li>
 <li><code>threshold_sum</code>: à renseigner pour <code>stat = sum</code>, valeur de la cellule en-deça de laquelle la valeur est masquée (exclusif)</li>
@@ -547,13 +564,7 @@ Tip
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>tab1 <span class="sc">%&gt;%</span> </span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_mask</span>(</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">threshold_count =</span> <span class="dv">500</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>0 cellules ne sont pas masquées mais concernent zéro ligne.</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>2 cellules sont masquées car concernent trop peu de lignes.</code></pre>
-</div>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   MODCOHA                   count
@@ -578,17 +589,17 @@ Table&nbsp;5: Répartition des ménages de Grandile selon le mode de cohabitatio
 <section id="export-vers-calc" class="level4">
 <h4 class="anchored" data-anchor-id="export-vers-calc">Export vers Calc</h4>
 <p>La fonction tab_xlsx() permet d’enregistrer le tableau mis en forme dans un fichier .xlsx.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_xlsx</span>(</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  tab,</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  path,</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  sheet,</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">""</span>,</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">note =</span> <span class="st">""</span>,</span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">lab_rows =</span> <span class="cn">NULL</span>,</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">lab_cols =</span> <span class="cn">NULL</span>,</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">open_wb =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">update =</span> <span class="cn">TRUE</span></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_xlsx</span>(</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  tab,</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  path,</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  sheet,</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">""</span>,</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">note =</span> <span class="st">""</span>,</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">lab_rows =</span> <span class="cn">NULL</span>,</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">lab_cols =</span> <span class="cn">NULL</span>,</span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">open_wb =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">update =</span> <span class="cn">TRUE</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>path</code>: chemin dans lequel exporter le tableau</li>
 <li><code>sheet</code>: nom de l’onglet dans le classeur - si l’onglet existe déjà, il sera mis à jour avec update = TRUE</li>
@@ -601,44 +612,36 @@ Table&nbsp;5: Répartition des ménages de Grandile selon le mode de cohabitatio
 </ul>
 <p>Exportons notre tableau dans un sous répertoire. Donnons lui un titre, une source et modifions le nom de la variable <code>MODCOHA</code> en <em>Mode de cohabitation</em>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">"_sorties"</span>)){<span class="fu">dir.create</span>(<span class="st">"_sorties"</span>)}</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>tab1c <span class="sc">%&gt;%</span> </span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_xlsx</span>(</span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">path =</span> <span class="st">"_sorties/tableaux.xlsx"</span>, </span>
-<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sheet =</span> <span class="st">"MODCOHA"</span>,</span>
-<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Répartition des ménages de Grandile selon le mode de cohabitation"</span>,</span>
-<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Cefil 2025"</span>,</span>
-<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Mode de cohabitation"</span></span>
-<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">dir.exists</span>(<span class="st">"_sorties"</span>)){<span class="fu">dir.create</span>(<span class="st">"_sorties"</span>)}</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>tab1c <span class="sc">%&gt;%</span> </span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_xlsx</span>(</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">path =</span> <span class="st">"_sorties/tableaux.xlsx"</span>, </span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">sheet =</span> <span class="st">"MODCOHA"</span>,</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Répartition des ménages de Grandile selon le mode de cohabitation"</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Cefil 2025"</span>,</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Mode de cohabitation"</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="document-quarto" class="level4">
-<h4 class="anchored" data-anchor-id="document-quarto">Document Quarto</h4>
-<p>Il suffit d’inclure le code <code>tabloid</code> dans un chunk. Par exemple, le tri à plat des ménages de Grandile par mode de cohabitation.</p>
+<p>Le résultat:</p>
+<p><img src="exportxlsx.jpg" class="img-fluid" style="display: block; margin: auto;"> #### Document Quarto Il suffit d’inclure la fonction <code>tab_render()</code> à la suite de la production du tableau dans un chunk. Par exemple, le tri à plat des ménages de Grandile par mode de cohabitation.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>tab1 <span class="sc">%&gt;%</span> </span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Effectif =</span> count) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  tab1b <span class="sc">%&gt;%</span> </span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_round</span>(</span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">n =</span> <span class="dv">1</span></span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="st">'Part (en %)'</span> <span class="ot">=</span> count)</span>
-<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
-<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Répartition des ménages de Grandile selon le mode de cohabitation"</span>,</span>
-<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">note=</span> <span class="st">"Source: Cefil 2025"</span>,</span>
-<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Mode de cohabitation"</span></span>
-<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Joining with `by = join_by(MODCOHA)`</code></pre>
-</div>
-<div id="tbl-modcoha6" class="cell quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<div aria-describedby="tbl-modcoha6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>tab1 <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Effectif =</span> count) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  tab1b <span class="sc">%&gt;%</span> </span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_round</span>(</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">n =</span> <span class="dv">1</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rename</span>(<span class="st">'Part (en %)'</span> <span class="ot">=</span> count)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Répartition des ménages de Grandile selon le mode de cohabitation"</span>,</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">note=</span> <span class="st">"Source: Cefil 2025"</span>,</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Mode de cohabitation"</span></span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table class="lightable-classic do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>Répartition des ménages de Grandile selon le mode de cohabitation</caption>
 <thead>
 <tr class="header">
@@ -689,33 +692,1243 @@ Table&nbsp;5: Répartition des ménages de Grandile selon le mode de cohabitatio
 </table>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-modcoha6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Table&nbsp;6: Répartition des ménages de Grandile selon le mode de cohabitation
+</section>
+</section>
+</section>
+<section id="tableaux-de-contingence" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="tableaux-de-contingence">Tableaux de contingence</h2>
+<p>Une table de contingence est un moyen pour présenter simultanément et de manière croisée deux données statistiques. Elle permet d’estimer la dépendance et la relation entre deux caractères observés sur une même population. Le tableau à double entrée est utilisé pour rassembler les effectifs partiels.</p>
+<section id="croisement-entre-le-diplôme-et-la-pcs" class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="croisement-entre-le-diplôme-et-la-pcs">Croisement entre le diplôme et la PCS</h3>
+<div id="tbl-DIPLxPCS1" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-DIPLxPCS1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>tab2 <span class="ot">&lt;-</span> grandile <span class="sc">%&gt;%</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(DIPL, PCS) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> DIPL,</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_cols =</span> PCS</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>tab2</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 10
+  DIPL      1 - Agriculteurs exp…¹ 2 - Artisans, commer…² 3 - Cadres, professi…³
+  &lt;chr&gt;                      &lt;dbl&gt;                  &lt;dbl&gt;                  &lt;dbl&gt;
+1 "0 - Auc…                     28                     39                      3
+2 "1 - Cer…                     10                     25                     13
+3 "2 - BEP…                     19                     17                     11
+4 "3 - CAP…                     19                     84                     35
+5 "4 - Bac…                      7                     41                     65
+6 "5 - Dip…                      3                     37                    108
+7 "6 - Dip…                      1                     28                    285
+8 "Ensembl…                     87                    271                    520
+# ℹ abbreviated names: ¹​`1 - Agriculteurs exploitants`,
+#   ²​`2 - Artisans, commerçants, chefs d'entreprise`,
+#   ³​`3 - Cadres, professions intellectuelles supérieures`
+# ℹ 6 more variables: `4 - Professions intermédiaires` &lt;dbl&gt;,
+#   `5 - Employés` &lt;dbl&gt;, `6 - Ouvriers` &lt;dbl&gt;,
+#   `7 - Inactifs ayant déjà travaillé` &lt;dbl&gt;,
+#   `8 - Autres sans activité professionnelle` &lt;dbl&gt;, Ensemble &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-DIPLxPCS1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Croisement entre le diplôme et la PCS de la personne de référence des ménages de Grandile
+</figcaption>
+</figure>
+</div>
+<p>et leur profil ligne, permettant de voir les surreprésentations des diplômés dans les PCS.</p>
+<div class="cell page-columns page-full">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>tab2b <span class="ot">&lt;-</span> tab2 <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pct</span>(<span class="at">pct =</span> <span class="st">"row"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(<span class="at">n =</span> <span class="dv">1</span>) </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>tab2b <span class="sc">%&gt;%</span> </span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-DIPLxPCS2" class="cell quarto-float quarto-figure quarto-figure-center anchored page-columns page-full">
+<figure class="quarto-float quarto-float-tbl figure page-columns page-full">
+<div aria-describedby="tbl-DIPLxPCS2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca" class="page-columns page-full">
+<div class="cell-output-display column-page">
+<table class="lightable-classic do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">DIPL</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">1 - Agriculteurs exploitants</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2 - Artisans, commerçants, chefs d'entreprise</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">3 - Cadres, professions intellectuelles supérieures</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">4 - Professions intermédiaires</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">5 - Employés</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">6 - Ouvriers</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">7 - Inactifs ayant déjà travaillé</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">8 - Autres sans activité professionnelle</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Ensemble</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0 - Aucun diplôme</td>
+<td style="text-align: center;">2,6</td>
+<td style="text-align: center;">3,6</td>
+<td style="text-align: center;">0,3</td>
+<td style="text-align: center;">3,5</td>
+<td style="text-align: center;">5,6</td>
+<td style="text-align: center;">14,7</td>
+<td style="text-align: center;">61,5</td>
+<td style="text-align: center;">8,2</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1 - Certificat d'études primaires</td>
+<td style="text-align: center;">1,7</td>
+<td style="text-align: center;">4,2</td>
+<td style="text-align: center;">2,2</td>
+<td style="text-align: center;">8,1</td>
+<td style="text-align: center;">8,1</td>
+<td style="text-align: center;">13,1</td>
+<td style="text-align: center;">52,9</td>
+<td style="text-align: center;">9,7</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2 - BEPC, brevet des collèges</td>
+<td style="text-align: center;">3,6</td>
+<td style="text-align: center;">3,2</td>
+<td style="text-align: center;">2,1</td>
+<td style="text-align: center;">11,3</td>
+<td style="text-align: center;">12,3</td>
+<td style="text-align: center;">43,0</td>
+<td style="text-align: center;">16,0</td>
+<td style="text-align: center;">8,5</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3 - CAP, BEP</td>
+<td style="text-align: center;">1,6</td>
+<td style="text-align: center;">7,0</td>
+<td style="text-align: center;">2,9</td>
+<td style="text-align: center;">8,5</td>
+<td style="text-align: center;">19,1</td>
+<td style="text-align: center;">31,0</td>
+<td style="text-align: center;">22,7</td>
+<td style="text-align: center;">7,3</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4 - Baccalauréat général, technologique ou professionnel</td>
+<td style="text-align: center;">0,8</td>
+<td style="text-align: center;">4,8</td>
+<td style="text-align: center;">7,6</td>
+<td style="text-align: center;">35,4</td>
+<td style="text-align: center;">13,2</td>
+<td style="text-align: center;">15,6</td>
+<td style="text-align: center;">11,3</td>
+<td style="text-align: center;">11,2</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5 - Diplôme universitaire de 1er cycle, BTS, DUT</td>
+<td style="text-align: center;">0,5</td>
+<td style="text-align: center;">6,7</td>
+<td style="text-align: center;">19,5</td>
+<td style="text-align: center;">19,5</td>
+<td style="text-align: center;">11,6</td>
+<td style="text-align: center;">9,4</td>
+<td style="text-align: center;">20,8</td>
+<td style="text-align: center;">11,9</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6 - Diplôme universitaire de 2ème ou 3ème cycle</td>
+<td style="text-align: center;">0,2</td>
+<td style="text-align: center;">4,6</td>
+<td style="text-align: center;">47,0</td>
+<td style="text-align: center;">17,5</td>
+<td style="text-align: center;">6,9</td>
+<td style="text-align: center;">4,6</td>
+<td style="text-align: center;">13,2</td>
+<td style="text-align: center;">5,9</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">100</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">1,6</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">5,0</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">9,6</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">14,1</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">11,5</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">19,4</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">30,0</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">8,8</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">100</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: center; padding: 0;"><sup></sup></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-DIPLxPCS2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Croisement entre le diplôme et la PCS de la personne de référence des ménages de Grandile
 </figcaption>
 </figure>
 </div>
 </div>
 </section>
 </section>
+<section id="tableaux-dindicateurs-statistiques" class="level2">
+<h2 class="anchored" data-anchor-id="tableaux-dindicateurs-statistiques">Tableaux d’indicateurs statistiques</h2>
+<section id="tableaux-de-cumuls" class="level3">
+<h3 class="anchored" data-anchor-id="tableaux-de-cumuls">Tableaux de cumuls</h3>
+<p>Calculons le nombre total de personnes, d’après la variable NBPERS, selon la PCS de la personne de référence du ménage.</p>
+<div class="cell" data-caption="Nombre de personnes vivant dans les ménages de Grandile selon la PCS de la personne de référence">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>tab3 <span class="ot">&lt;-</span> grandile <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(PCS) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(<span class="at">var_rows =</span> PCS,</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">var_stat =</span> NBPERS,</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">stat =</span> <span class="st">"mean"</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>tab3 <span class="sc">%&gt;%</span> </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-NBPERSPCS" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-caption="Nombre de personnes vivant dans les ménages de Grandile selon la PCS de la personne de référence">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-NBPERSPCS-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-classic do-not-create-environment table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">PCS</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1 - Agriculteurs exploitants</td>
+<td style="text-align: center;">2,540230</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2 - Artisans, commerçants, chefs d'entreprise</td>
+<td style="text-align: center;">2,546125</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3 - Cadres, professions intellectuelles supérieures</td>
+<td style="text-align: center;">2,584615</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4 - Professions intermédiaires</td>
+<td style="text-align: center;">2,540576</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5 - Employés</td>
+<td style="text-align: center;">2,584270</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6 - Ouvriers</td>
+<td style="text-align: center;">2,571836</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7 - Inactifs ayant déjà travaillé</td>
+<td style="text-align: center;">1,977846</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8 - Autres sans activité professionnelle</td>
+<td style="text-align: center;">1,874214</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">2,328719</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: center; padding: 0;"><sup></sup></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-NBPERSPCS-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8
+</figcaption>
+</figure>
+</div>
+</div>
 </section>
-<section id="tableaux-de-contingence" class="level2">
-<h2 class="anchored" data-anchor-id="tableaux-de-contingence">Tableaux de contingence</h2>
+<section id="tableaux-de-moyennes" class="level3">
+<h3 class="anchored" data-anchor-id="tableaux-de-moyennes">Tableaux de moyennes</h3>
+<p>Calculons le revenu moyen des habitants, d’après la variable REVENU, selon la PCS de la personne de référence du ménage. On doit pondérer par le nombre de personnes composant le ménage.</p>
+<div class="cell" data-caption="Revenu moyen des individus de de Grandile selon la PCS de la personne de référence">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>tab4 <span class="ot">&lt;-</span> grandile <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(PCS) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> PCS,</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_stat =</span> REVENU,</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_w =</span> NBPERS,</span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"weighted_mean"</span></span>
+<span id="cb29-8"><a href="#cb29-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb29-9"><a href="#cb29-9" aria-hidden="true" tabindex="-1"></a>tab4 <span class="sc">%&gt;%</span> </span>
+<span id="cb29-10"><a href="#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>()</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-REVENUmoyPCS" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-caption="Revenu moyen des individus de de Grandile selon la PCS de la personne de référence">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-REVENUmoyPCS-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-classic do-not-create-environment table table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">PCS</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">weighted_mean</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1 - Agriculteurs exploitants</td>
+<td style="text-align: center;">47 374,71</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2 - Artisans, commerçants, chefs d'entreprise</td>
+<td style="text-align: center;">132 373,37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3 - Cadres, professions intellectuelles supérieures</td>
+<td style="text-align: center;">121 288,38</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4 - Professions intermédiaires</td>
+<td style="text-align: center;">62 621,47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5 - Employés</td>
+<td style="text-align: center;">36 698,46</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6 - Ouvriers</td>
+<td style="text-align: center;">44 142,00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7 - Inactifs ayant déjà travaillé</td>
+<td style="text-align: center;">19 349,94</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8 - Autres sans activité professionnelle</td>
+<td style="text-align: center;">14 634,00</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">50 728,47</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: center; padding: 0;"><sup></sup></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-REVENUmoyPCS-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;9
+</figcaption>
+</figure>
+</div>
+</div>
 </section>
-<section id="tableaux-de-moyennes" class="level2">
-<h2 class="anchored" data-anchor-id="tableaux-de-moyennes">Tableaux de moyennes</h2>
 </section>
-<section id="variable-pondérée" class="level2">
-<h2 class="anchored" data-anchor-id="variable-pondérée">Variable pondérée</h2>
+<section id="tableaux-en-évolution" class="level2">
+<h2 class="anchored" data-anchor-id="tableaux-en-évolution">Tableaux en évolution</h2>
+<section id="une-seule-variable-dinterêt" class="level3">
+<h3 class="anchored" data-anchor-id="une-seule-variable-dinterêt">Une seule variable d’interêt</h3>
+<p>Nous allons réaliser un tableau des populations des pays d’Europe de l’Ouest (région “Western Europe”) en 1990 et 2010 à partir des données de Gapminder.</p>
+<p>Tout d’abord chargeons le jeu de données.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'donnees/gapminder.rds'</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>                     </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(gapminder)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 10,545
+Columns: 9
+$ country          &lt;chr&gt; "Albania", "Algeria", "Angola", "Antigua and Barbuda"…
+$ year             &lt;dbl&gt; 1960, 1960, 1960, 1960, 1960, 1960, 1960, 1960, 1960,…
+$ infant_mortality &lt;dbl&gt; 115.40, 148.20, 208.00, NA, 59.87, NA, NA, 20.30, 37.…
+$ life_expectancy  &lt;dbl&gt; 62.87, 47.50, 35.98, 62.97, 65.39, 66.86, 65.66, 70.8…
+$ fertility        &lt;dbl&gt; 6.19, 7.65, 7.32, 4.43, 3.11, 4.55, 4.82, 3.45, 2.70,…
+$ population       &lt;dbl&gt; 1636054, 11124892, 5270844, 54681, 20619075, 1867396,…
+$ gdp              &lt;dbl&gt; NA, 13828152297, NA, NA, 108322326649, NA, NA, 966778…
+$ continent        &lt;chr&gt; "Europe", "Africa", "Africa", "Americas", "Americas",…
+$ region           &lt;chr&gt; "Southern Europe", "Northern Africa", "Middle Africa"…</code></pre>
+</div>
+</div>
+<p>Construisons le tableau et affichons le:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>tab5 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">2010</span>), region <span class="sc">==</span> <span class="st">"Western Europe"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.character</span>(year)) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(country) <span class="sc">%&gt;%</span> </span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> country,</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_cols =</span> year,</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_stat =</span> population,</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"sum"</span>) </span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>tab5</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 4
+  country        `1990`    `2010`  Ensemble
+  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+1 Austria       7706571   8391986  16098557
+2 Belgium       9978241  10929978  20908219
+3 France       56943299  62961136 119904435
+4 Germany      78958237  80435307 159393544
+5 Luxembourg     381787    507889    889676
+6 Netherlands  14915139  16631571  31546710
+7 Switzerland   6673920   7830534  14504454
+8 Ensemble    175557194 187688401 363245595</code></pre>
+</div>
+</div>
+<p>Nous disposons de la marge en colonne, qui n’a pas de sens pour une série chronologique. Heurequement, l’objet tab5 peut être modifié, car c’est un tibble !</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>tab5 <span class="ot">&lt;-</span> tab5 <span class="sc">%&gt;%</span> </span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Ensemble)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>tab5</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 3
+  country        `1990`    `2010`
+  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;
+1 Austria       7706571   8391986
+2 Belgium       9978241  10929978
+3 France       56943299  62961136
+4 Germany      78958237  80435307
+5 Luxembourg     381787    507889
+6 Netherlands  14915139  16631571
+7 Switzerland   6673920   7830534
+8 Ensemble    175557194 187688401</code></pre>
+</div>
+</div>
+<p>C’est mieux, nous allons pouvoir effectuer un rendu dans le document:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>tab5 <span class="sc">%&gt;%</span> </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Évolution de la population des pays d'Europe de l'Ouest entre 1990 et 2010"</span>,</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Gapminder"</span>,</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Pays"</span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-pop9015WE" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-pop9015WE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-classic do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Évolution de la population des pays d'Europe de l'Ouest entre 1990 et 2010</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Pays</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">1990</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2010</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Austria</td>
+<td style="text-align: center;">7 706 571</td>
+<td style="text-align: center;">8 391 986</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Belgium</td>
+<td style="text-align: center;">9 978 241</td>
+<td style="text-align: center;">10 929 978</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">France</td>
+<td style="text-align: center;">56 943 299</td>
+<td style="text-align: center;">62 961 136</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Germany</td>
+<td style="text-align: center;">78 958 237</td>
+<td style="text-align: center;">80 435 307</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Luxembourg</td>
+<td style="text-align: center;">381 787</td>
+<td style="text-align: center;">507 889</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Netherlands</td>
+<td style="text-align: center;">14 915 139</td>
+<td style="text-align: center;">16 631 571</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Switzerland</td>
+<td style="text-align: center;">6 673 920</td>
+<td style="text-align: center;">7 830 534</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">175 557 194</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">187 688 401</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: center; padding: 0;"><sup></sup> Source: Gapminder</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-pop9015WE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;10: Évolution de la population des pays d'Europe de l'Ouest entre 1990 et 2010
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variables quantitatives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vous aurez remarqué que nous avons transformé la variable <code>year</code> en variable catégorielle à l’aide de <code>as.character()</code>. En effet, <code>tabloid</code> ne permet pas de ventiler les individus selon des modalités quantitatives.</p>
+</div>
+</div>
 </section>
-<section id="exporter-un-tableau-1" class="level2">
-<h2 class="anchored" data-anchor-id="exporter-un-tableau-1">Exporter un tableau</h2>
+<section id="deux-variables-dinterêt" class="level3">
+<h3 class="anchored" data-anchor-id="deux-variables-dinterêt">Deux variables d’interêt</h3>
+<p>Ce tableau affichera l’évolution du PIB (variable gdp) et du nombre d’habitants dans les pays de la région “Western Europe” en 1990 et en 2010.</p>
+<p>On ne peut pas préciser plusieurs variables au paramètre <code>var_stat =</code>. On doit donc représenter une seule variable qui prendra plusieurs modalités. Par exemple une variable <code>indic</code> dont les valeurs seront dans une variable <code>val</code> qui sera la variable d’intérêt de <code>tabloid.</code></p>
+<p>Commençons par préparer les données à l’aide du package <code>tidyr</code> (voir <span class="citation" data-cites="citetidyr">Wickham, Vaughan, et Girlich (<a href="references.html#ref-citetidyr" role="doc-biblioref">2024</a>)</span>).</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'tidyr'</span>)</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>datatab6 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(gdp, population), <span class="at">names_to =</span> <span class="st">"indic"</span>, <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">2010</span>), region <span class="sc">==</span> <span class="st">"Western Europe"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.character</span>(year)) <span class="sc">%&gt;%</span> </span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(country)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'tidyr'</span>)</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>datatab6 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1990</span>, <span class="dv">2010</span>), region <span class="sc">==</span> <span class="st">"Western Europe"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(gdp, population), <span class="at">names_to =</span> <span class="st">"indic"</span>, <span class="at">values_to =</span> <span class="st">"val"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.character</span>(year)) <span class="sc">%&gt;%</span> </span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(country)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>La fonction <code>pivot_longer(</code>) transforme les données (plus exactement les colonnes <code>gdp</code> et <code>population</code>) ce qui nous sera utile lorsque l’on voudra utiliser <code>tabloid</code>. En effet, dans le code ci-dessous, vous remarquez que si les pays (classés par ordre alphabétique) sont en lignes (paramètre <code>var_rows =</code>), les colonnes prennent comme variable l’année (<code>year</code>) et l’indicateur (<code>gdp</code> ou <code>population</code>) transformé en longueur par <code>pivot_longer()</code>. On n’oubliera pas d’enlever toutes les colonnes dont le nom termine par <em>“Ensemble”</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>tab6 <span class="ot">&lt;-</span> datatab6 <span class="sc">%&gt;%</span> </span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> country,</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_cols =</span> <span class="fu">c</span>(year, indic),</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_stat =</span> val,</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"sum"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"Ensemble"</span>))</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a>tab6</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 5
+  country        `1990_gdp` `1990_population`    `2010_gdp` `2010_population`
+  &lt;chr&gt;               &lt;dbl&gt;             &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;
+1 Austria      147353847860           7706571  223954137424           8391986
+2 Belgium      186769011525           9978241  267143096398          10929978
+3 France      1091598599817          56943299 1480999829195          62961136
+4 Germany     1556954345661          78958237 2069464070055          80435307
+5 Luxembourg    12401289199            381787   26516904700            507889
+6 Netherlands  281955594047          14915139  441185443862          16631571
+7 Switzerland  224773355504           6673920  294748691280           7830534
+8 Ensemble    3501806043613         175557194 4804012172914         187688401</code></pre>
+</div>
+</div>
+<p>On effectue un rendu du tableau:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>tab6 <span class="sc">%&gt;%</span> </span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010"</span>,</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Gapminder"</span>,</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Pays"</span>,</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_cols =</span> <span class="fu">list</span>(<span class="at">indic =</span> <span class="fu">c</span>(<span class="st">"PIB"</span>, <span class="st">"Population"</span>))</span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-gdppop9915WE" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-gdppop9915WE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-classic do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; empty-cells: hide;"></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+1990
+</div></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+2010
+</div></th>
+</tr>
+<tr class="even">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Pays</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">PIB</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Population</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">PIB</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Population</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Austria</td>
+<td style="text-align: center;">147 353 847 860</td>
+<td style="text-align: center;">7 706 571</td>
+<td style="text-align: center;">223 954 137 424</td>
+<td style="text-align: center;">8 391 986</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Belgium</td>
+<td style="text-align: center;">186 769 011 525</td>
+<td style="text-align: center;">9 978 241</td>
+<td style="text-align: center;">267 143 096 398</td>
+<td style="text-align: center;">10 929 978</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">France</td>
+<td style="text-align: center;">1 091 598 599 817</td>
+<td style="text-align: center;">56 943 299</td>
+<td style="text-align: center;">1 480 999 829 195</td>
+<td style="text-align: center;">62 961 136</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Germany</td>
+<td style="text-align: center;">1 556 954 345 661</td>
+<td style="text-align: center;">78 958 237</td>
+<td style="text-align: center;">2 069 464 070 055</td>
+<td style="text-align: center;">80 435 307</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Luxembourg</td>
+<td style="text-align: center;">12 401 289 199</td>
+<td style="text-align: center;">381 787</td>
+<td style="text-align: center;">26 516 904 700</td>
+<td style="text-align: center;">507 889</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Netherlands</td>
+<td style="text-align: center;">281 955 594 047</td>
+<td style="text-align: center;">14 915 139</td>
+<td style="text-align: center;">441 185 443 862</td>
+<td style="text-align: center;">16 631 571</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Switzerland</td>
+<td style="text-align: center;">224 773 355 504</td>
+<td style="text-align: center;">6 673 920</td>
+<td style="text-align: center;">294 748 691 280</td>
+<td style="text-align: center;">7 830 534</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">3 501 806 043 613</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">175 557 194</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">4 804 012 172 914</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">187 688 401</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: center; padding: 0;"><sup></sup> Source: Gapminder</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-gdppop9915WE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;11: Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010
+</figcaption>
+</figure>
+</div>
+</div>
+</section>
+<section id="série-chronologique" class="level3">
+<h3 class="anchored" data-anchor-id="série-chronologique">Série chronologique</h3>
+<p>Construisons un tableau des évolutions de l’espérance de vie (variable <code>life_expectancy</code>) entre 2000 et 2010. Pour construire la marge, nous calculerons la moyenne pondérée selon la population du pays.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>tab7 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="dv">2000</span><span class="sc">:</span><span class="dv">2010</span>, region <span class="sc">==</span> <span class="st">"South America"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.character</span>(year)) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(country) <span class="sc">%&gt;%</span> </span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> country, </span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_cols =</span> year, </span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_stat =</span> life_expectancy, </span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"weighted_mean"</span>, </span>
+<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_w =</span> population)</span>
+<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a>tab7</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 13
+   country `2000` `2001` `2002` `2003` `2004` `2005` `2006` `2007` `2008` `2009`
+   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+ 1 Argent…   74.2   74.3   74.3   74.5   75     75.3   75.3   75.2   75.4   75.6
+ 2 Bolivia   67.6   68.3   68.7   69.3   69.8   70.2   70.6   70.9   71.2   71.6
+ 3 Brazil    70.7   71.1   71.4   71.7   72     72.4   72.7   73     73.2   73.4
+ 4 Chile     77.3   77.4   77.7   77.8   78     78.2   78.2   78.3   78.5   78.5
+ 5 Colomb…   73.3   73.5   73.7   74.5   74.7   75.1   75.3   75.9   76.2   76.2
+ 6 Ecuador   73.2   73.4   73.6   73.7   73.9   74.1   74.3   74.5   74.7   74.9
+ 7 Guyana    64.2   63.9   63.5   63.7   64.2   64.4   64.8   64.9   65     65.3
+ 8 Paragu…   74.2   74.2   74.1   74.1   73.8   74     74     74     74     74  
+ 9 Peru      74.6   75.2   75.7   76.2   76.7   77.2   77.7   77.9   78.2   78.2
+10 Surina…   69.7   69.5   69.4   69.5   69.7   69.9   70     70.1   70.2   70.5
+11 Uruguay   74.6   74.8   75     75     75.3   75.5   75.7   75.7   76     76.2
+12 Venezu…   73.8   73.8   73.8   73.5   74.3   74.6   74.5   74.4   74.2   74.4
+13 Ensemb…   72.3   72.6   72.8   73.1   73.4   73.8   74.0   74.3   74.5   74.6
+# ℹ 2 more variables: `2010` &lt;dbl&gt;, Ensemble &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>On arrondit à une décimale et on supprime la colonne Ensemble:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>tab7 <span class="ot">&lt;-</span> tab7 <span class="sc">%&gt;%</span> </span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">ends_with</span>(<span class="st">"Ensemble"</span>)) </span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>tab7</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 13 × 12
+   country `2000` `2001` `2002` `2003` `2004` `2005` `2006` `2007` `2008` `2009`
+   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+ 1 Argent…   74.2   74.3   74.3   74.5   75     75.3   75.3   75.2   75.4   75.6
+ 2 Bolivia   67.6   68.3   68.7   69.3   69.8   70.2   70.6   70.9   71.2   71.6
+ 3 Brazil    70.7   71.1   71.4   71.7   72     72.4   72.7   73     73.2   73.4
+ 4 Chile     77.3   77.4   77.7   77.8   78     78.2   78.2   78.3   78.5   78.5
+ 5 Colomb…   73.3   73.5   73.7   74.5   74.7   75.1   75.3   75.9   76.2   76.2
+ 6 Ecuador   73.2   73.4   73.6   73.7   73.9   74.1   74.3   74.5   74.7   74.9
+ 7 Guyana    64.2   63.9   63.5   63.7   64.2   64.4   64.8   64.9   65     65.3
+ 8 Paragu…   74.2   74.2   74.1   74.1   73.8   74     74     74     74     74  
+ 9 Peru      74.6   75.2   75.7   76.2   76.7   77.2   77.7   77.9   78.2   78.2
+10 Surina…   69.7   69.5   69.4   69.5   69.7   69.9   70     70.1   70.2   70.5
+11 Uruguay   74.6   74.8   75     75     75.3   75.5   75.7   75.7   76     76.2
+12 Venezu…   73.8   73.8   73.8   73.5   74.3   74.6   74.5   74.4   74.2   74.4
+13 Ensemb…   72.3   72.6   72.8   73.1   73.4   73.8   74     74.3   74.5   74.6
+# ℹ 1 more variable: `2010` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>tab7 <span class="sc">%&gt;%</span> </span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2010"</span>,</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Gapminder"</span>,</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Pays"</span></span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-pop0010SA" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-pop0010SA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="lightable-classic do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2010</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Pays</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2000</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2001</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2002</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2003</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2004</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2005</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2006</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2007</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2008</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2009</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2010</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Argentina</td>
+<td style="text-align: center;">74,2</td>
+<td style="text-align: center;">74,3</td>
+<td style="text-align: center;">74,3</td>
+<td style="text-align: center;">74,5</td>
+<td style="text-align: center;">75,0</td>
+<td style="text-align: center;">75,3</td>
+<td style="text-align: center;">75,3</td>
+<td style="text-align: center;">75,2</td>
+<td style="text-align: center;">75,4</td>
+<td style="text-align: center;">75,6</td>
+<td style="text-align: center;">75,8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bolivia</td>
+<td style="text-align: center;">67,6</td>
+<td style="text-align: center;">68,3</td>
+<td style="text-align: center;">68,7</td>
+<td style="text-align: center;">69,3</td>
+<td style="text-align: center;">69,8</td>
+<td style="text-align: center;">70,2</td>
+<td style="text-align: center;">70,6</td>
+<td style="text-align: center;">70,9</td>
+<td style="text-align: center;">71,2</td>
+<td style="text-align: center;">71,6</td>
+<td style="text-align: center;">71,8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Brazil</td>
+<td style="text-align: center;">70,7</td>
+<td style="text-align: center;">71,1</td>
+<td style="text-align: center;">71,4</td>
+<td style="text-align: center;">71,7</td>
+<td style="text-align: center;">72,0</td>
+<td style="text-align: center;">72,4</td>
+<td style="text-align: center;">72,7</td>
+<td style="text-align: center;">73,0</td>
+<td style="text-align: center;">73,2</td>
+<td style="text-align: center;">73,4</td>
+<td style="text-align: center;">73,6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Chile</td>
+<td style="text-align: center;">77,3</td>
+<td style="text-align: center;">77,4</td>
+<td style="text-align: center;">77,7</td>
+<td style="text-align: center;">77,8</td>
+<td style="text-align: center;">78,0</td>
+<td style="text-align: center;">78,2</td>
+<td style="text-align: center;">78,2</td>
+<td style="text-align: center;">78,3</td>
+<td style="text-align: center;">78,5</td>
+<td style="text-align: center;">78,5</td>
+<td style="text-align: center;">78,5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Colombia</td>
+<td style="text-align: center;">73,3</td>
+<td style="text-align: center;">73,5</td>
+<td style="text-align: center;">73,7</td>
+<td style="text-align: center;">74,5</td>
+<td style="text-align: center;">74,7</td>
+<td style="text-align: center;">75,1</td>
+<td style="text-align: center;">75,3</td>
+<td style="text-align: center;">75,9</td>
+<td style="text-align: center;">76,2</td>
+<td style="text-align: center;">76,2</td>
+<td style="text-align: center;">76,4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ecuador</td>
+<td style="text-align: center;">73,2</td>
+<td style="text-align: center;">73,4</td>
+<td style="text-align: center;">73,6</td>
+<td style="text-align: center;">73,7</td>
+<td style="text-align: center;">73,9</td>
+<td style="text-align: center;">74,1</td>
+<td style="text-align: center;">74,3</td>
+<td style="text-align: center;">74,5</td>
+<td style="text-align: center;">74,7</td>
+<td style="text-align: center;">74,9</td>
+<td style="text-align: center;">75,1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Guyana</td>
+<td style="text-align: center;">64,2</td>
+<td style="text-align: center;">63,9</td>
+<td style="text-align: center;">63,5</td>
+<td style="text-align: center;">63,7</td>
+<td style="text-align: center;">64,2</td>
+<td style="text-align: center;">64,4</td>
+<td style="text-align: center;">64,8</td>
+<td style="text-align: center;">64,9</td>
+<td style="text-align: center;">65,0</td>
+<td style="text-align: center;">65,3</td>
+<td style="text-align: center;">65,5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Paraguay</td>
+<td style="text-align: center;">74,2</td>
+<td style="text-align: center;">74,2</td>
+<td style="text-align: center;">74,1</td>
+<td style="text-align: center;">74,1</td>
+<td style="text-align: center;">73,8</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Peru</td>
+<td style="text-align: center;">74,6</td>
+<td style="text-align: center;">75,2</td>
+<td style="text-align: center;">75,7</td>
+<td style="text-align: center;">76,2</td>
+<td style="text-align: center;">76,7</td>
+<td style="text-align: center;">77,2</td>
+<td style="text-align: center;">77,7</td>
+<td style="text-align: center;">77,9</td>
+<td style="text-align: center;">78,2</td>
+<td style="text-align: center;">78,2</td>
+<td style="text-align: center;">78,4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Suriname</td>
+<td style="text-align: center;">69,7</td>
+<td style="text-align: center;">69,5</td>
+<td style="text-align: center;">69,4</td>
+<td style="text-align: center;">69,5</td>
+<td style="text-align: center;">69,7</td>
+<td style="text-align: center;">69,9</td>
+<td style="text-align: center;">70,0</td>
+<td style="text-align: center;">70,1</td>
+<td style="text-align: center;">70,2</td>
+<td style="text-align: center;">70,5</td>
+<td style="text-align: center;">70,7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Uruguay</td>
+<td style="text-align: center;">74,6</td>
+<td style="text-align: center;">74,8</td>
+<td style="text-align: center;">75,0</td>
+<td style="text-align: center;">75,0</td>
+<td style="text-align: center;">75,3</td>
+<td style="text-align: center;">75,5</td>
+<td style="text-align: center;">75,7</td>
+<td style="text-align: center;">75,7</td>
+<td style="text-align: center;">76,0</td>
+<td style="text-align: center;">76,2</td>
+<td style="text-align: center;">76,2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Venezuela</td>
+<td style="text-align: center;">73,8</td>
+<td style="text-align: center;">73,8</td>
+<td style="text-align: center;">73,8</td>
+<td style="text-align: center;">73,5</td>
+<td style="text-align: center;">74,3</td>
+<td style="text-align: center;">74,6</td>
+<td style="text-align: center;">74,5</td>
+<td style="text-align: center;">74,4</td>
+<td style="text-align: center;">74,2</td>
+<td style="text-align: center;">74,4</td>
+<td style="text-align: center;">74,9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">72,3</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">72,6</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">72,8</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">73,1</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">73,4</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">73,8</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">74,0</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">74,3</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">74,5</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">74,6</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">74,8</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: center; padding: 0;"><sup></sup> Source: Gapminder</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-pop0010SA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;12: Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2010
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Supprimer la ligne Ensemble
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Cette marge régionale pose problème. En effet, l’hypothèse retenue est trop forte, il faudrait calculer l’espérance de vie de cet ensemble de pays en reprenant les structures de mortalité et en les agrégeant. On va supprimer cette ligne:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>tab7 <span class="ot">&lt;-</span> tab7 <span class="sc">%&gt;%</span> </span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">!=</span> <span class="st">"Ensemble"</span>)</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>tab7 <span class="sc">%&gt;%</span> </span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2001"</span>,</span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Gapminder"</span>,</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Pays"</span></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2001</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Pays</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2000</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2001</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2002</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2003</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2004</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2005</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2006</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2007</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2008</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2009</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2010</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Argentina</td>
+<td style="text-align: center;">74,2</td>
+<td style="text-align: center;">74,3</td>
+<td style="text-align: center;">74,3</td>
+<td style="text-align: center;">74,5</td>
+<td style="text-align: center;">75,0</td>
+<td style="text-align: center;">75,3</td>
+<td style="text-align: center;">75,3</td>
+<td style="text-align: center;">75,2</td>
+<td style="text-align: center;">75,4</td>
+<td style="text-align: center;">75,6</td>
+<td style="text-align: center;">75,8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Bolivia</td>
+<td style="text-align: center;">67,6</td>
+<td style="text-align: center;">68,3</td>
+<td style="text-align: center;">68,7</td>
+<td style="text-align: center;">69,3</td>
+<td style="text-align: center;">69,8</td>
+<td style="text-align: center;">70,2</td>
+<td style="text-align: center;">70,6</td>
+<td style="text-align: center;">70,9</td>
+<td style="text-align: center;">71,2</td>
+<td style="text-align: center;">71,6</td>
+<td style="text-align: center;">71,8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Brazil</td>
+<td style="text-align: center;">70,7</td>
+<td style="text-align: center;">71,1</td>
+<td style="text-align: center;">71,4</td>
+<td style="text-align: center;">71,7</td>
+<td style="text-align: center;">72,0</td>
+<td style="text-align: center;">72,4</td>
+<td style="text-align: center;">72,7</td>
+<td style="text-align: center;">73,0</td>
+<td style="text-align: center;">73,2</td>
+<td style="text-align: center;">73,4</td>
+<td style="text-align: center;">73,6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Chile</td>
+<td style="text-align: center;">77,3</td>
+<td style="text-align: center;">77,4</td>
+<td style="text-align: center;">77,7</td>
+<td style="text-align: center;">77,8</td>
+<td style="text-align: center;">78,0</td>
+<td style="text-align: center;">78,2</td>
+<td style="text-align: center;">78,2</td>
+<td style="text-align: center;">78,3</td>
+<td style="text-align: center;">78,5</td>
+<td style="text-align: center;">78,5</td>
+<td style="text-align: center;">78,5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Colombia</td>
+<td style="text-align: center;">73,3</td>
+<td style="text-align: center;">73,5</td>
+<td style="text-align: center;">73,7</td>
+<td style="text-align: center;">74,5</td>
+<td style="text-align: center;">74,7</td>
+<td style="text-align: center;">75,1</td>
+<td style="text-align: center;">75,3</td>
+<td style="text-align: center;">75,9</td>
+<td style="text-align: center;">76,2</td>
+<td style="text-align: center;">76,2</td>
+<td style="text-align: center;">76,4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Ecuador</td>
+<td style="text-align: center;">73,2</td>
+<td style="text-align: center;">73,4</td>
+<td style="text-align: center;">73,6</td>
+<td style="text-align: center;">73,7</td>
+<td style="text-align: center;">73,9</td>
+<td style="text-align: center;">74,1</td>
+<td style="text-align: center;">74,3</td>
+<td style="text-align: center;">74,5</td>
+<td style="text-align: center;">74,7</td>
+<td style="text-align: center;">74,9</td>
+<td style="text-align: center;">75,1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Guyana</td>
+<td style="text-align: center;">64,2</td>
+<td style="text-align: center;">63,9</td>
+<td style="text-align: center;">63,5</td>
+<td style="text-align: center;">63,7</td>
+<td style="text-align: center;">64,2</td>
+<td style="text-align: center;">64,4</td>
+<td style="text-align: center;">64,8</td>
+<td style="text-align: center;">64,9</td>
+<td style="text-align: center;">65,0</td>
+<td style="text-align: center;">65,3</td>
+<td style="text-align: center;">65,5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Paraguay</td>
+<td style="text-align: center;">74,2</td>
+<td style="text-align: center;">74,2</td>
+<td style="text-align: center;">74,1</td>
+<td style="text-align: center;">74,1</td>
+<td style="text-align: center;">73,8</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+<td style="text-align: center;">74,0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Peru</td>
+<td style="text-align: center;">74,6</td>
+<td style="text-align: center;">75,2</td>
+<td style="text-align: center;">75,7</td>
+<td style="text-align: center;">76,2</td>
+<td style="text-align: center;">76,7</td>
+<td style="text-align: center;">77,2</td>
+<td style="text-align: center;">77,7</td>
+<td style="text-align: center;">77,9</td>
+<td style="text-align: center;">78,2</td>
+<td style="text-align: center;">78,2</td>
+<td style="text-align: center;">78,4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Suriname</td>
+<td style="text-align: center;">69,7</td>
+<td style="text-align: center;">69,5</td>
+<td style="text-align: center;">69,4</td>
+<td style="text-align: center;">69,5</td>
+<td style="text-align: center;">69,7</td>
+<td style="text-align: center;">69,9</td>
+<td style="text-align: center;">70,0</td>
+<td style="text-align: center;">70,1</td>
+<td style="text-align: center;">70,2</td>
+<td style="text-align: center;">70,5</td>
+<td style="text-align: center;">70,7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Uruguay</td>
+<td style="text-align: center;">74,6</td>
+<td style="text-align: center;">74,8</td>
+<td style="text-align: center;">75,0</td>
+<td style="text-align: center;">75,0</td>
+<td style="text-align: center;">75,3</td>
+<td style="text-align: center;">75,5</td>
+<td style="text-align: center;">75,7</td>
+<td style="text-align: center;">75,7</td>
+<td style="text-align: center;">76,0</td>
+<td style="text-align: center;">76,2</td>
+<td style="text-align: center;">76,2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Venezuela</td>
+<td style="text-align: center;">73,8</td>
+<td style="text-align: center;">73,8</td>
+<td style="text-align: center;">73,8</td>
+<td style="text-align: center;">73,5</td>
+<td style="text-align: center;">74,3</td>
+<td style="text-align: center;">74,6</td>
+<td style="text-align: center;">74,5</td>
+<td style="text-align: center;">74,4</td>
+<td style="text-align: center;">74,2</td>
+<td style="text-align: center;">74,4</td>
+<td style="text-align: center;">74,9</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: center; padding: 0;"><sup></sup> Source: Gapminder</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="todo" class="level2">
+<h2 class="anchored" data-anchor-id="todo">TODO</h2>
+<section id="utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html" class="level3">
+<h3 class="anchored" data-anchor-id="utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html">Utilisation de kableExtra pour mettre en forme un rendu html</h3>
+</section>
+<section id="utiliser-gt-plutôt-que-tab_render" class="level3">
+<h3 class="anchored" data-anchor-id="utiliser-gt-plutôt-que-tab_render">Utiliser gt() plutôt que tab_render()</h3>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-pillaroptions" class="csl-entry" role="listitem">
-Müller, Kirill, and Hadley Wickham. 2024. <em>Controlling Display of Numbers</em>. <a href="https://tibble.tidyverse.org/articles/numbers.html">https://tibble.tidyverse.org/articles/numbers.html</a>.
+Müller, Kirill, et Hadley Wickham. 2024. <em>Controlling display of numbers</em>. <a href="https://tibble.tidyverse.org/articles/numbers.html">https://tibble.tidyverse.org/articles/numbers.html</a>.
+</div>
+<div id="ref-citedplyr" class="csl-entry" role="listitem">
+Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, et Davis Vaughan. 2023. <em>dplyr: A Grammar of Data Manipulation</em>. <a href="https://dplyr.tidyverse.org">https://dplyr.tidyverse.org</a>.
+</div>
+<div id="ref-citetidyr" class="csl-entry" role="listitem">
+Wickham, Hadley, Davis Vaughan, et Maximilian Girlich. 2024. <em>tidyr: Tidy Messy Data</em>. <a href="https://tidyr.tidyverse.org">https://tidyr.tidyverse.org</a>.
 </div>
 </div>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -744,12 +1957,12 @@ Müller, Kirill, and Hadley Wickham. 2024. <em>Controlling Display of Numbers</e
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Copié");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Copié");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
@@ -1118,7 +2331,7 @@ Müller, Kirill, and Hadley Wickham. 2024. <em>Controlling Display of Numbers</e
     }
   });
   </script>
-<nav class="page-navigation">
+<nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="./intro.html" class="pagination-link" aria-label="Le package Tabloid">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Le package Tabloid</span>
