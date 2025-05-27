@@ -251,6 +251,7 @@ tab1c %>%
 Le résultat:
 
 ![](exportxlsx.jpg){style="display: block; margin: auto;"}
+
 #### Document Quarto
 Il suffit d'inclure la fonction `tab_render()` à la suite de la production du tableau dans un chunk. Par exemple, le tri à plat des ménages de Grandile par mode de cohabitation.
 
@@ -319,7 +320,9 @@ tab3 <- grandile %>%
   arrange(PCS) %>% 
   tab_build(var_rows = PCS,
             var_stat = NBPERS,
-            stat = "mean")
+            stat = "mean") %>% 
+  tab_round(n = 1) 
+
 tab3 %>% 
   tab_render()
 ```
@@ -338,7 +341,9 @@ tab4 <- grandile %>%
     var_stat = REVENU,
     var_w = NBPERS,
     stat = "weighted_mean"
-  )
+  ) %>% 
+  tab_round(n = -2) # arrondi à la centaine d'€
+
 tab4 %>% 
   tab_render()
 ```
@@ -411,7 +416,7 @@ Vous aurez remarqué que nous avons transformé la variable `year` en variable c
 
 Ce tableau affichera l'évolution du PIB (variable gdp) et du nombre d'habitants dans les pays de la région "Western Europe" en 1990 et en 2010.
 
-On ne peut pas préciser plusieurs variables au paramètre `var_stat =`. On doit donc représenter une seule variable qui prendra plusieurs modalités. Par exemple une variable `indic` dont les valeurs seront dans une variable `val` qui sera la variable d’intérêt de `tabloid.`
+On ne peut pas préciser plusieurs variables au paramètre `var_stat =`. On doit donc représenter une seule variable qui prendra plusieurs modalités. Par exemple une variable `indic` dont les valeurs seront dans une variable `val` qui sera la variable d'intérêt de `tabloid.`
 
 Commençons par préparer les données à l'aide du package `tidyr` (voir @citetidyr).
 ```{r}
