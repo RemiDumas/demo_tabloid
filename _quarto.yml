@@ -1,6 +1,8 @@
 project:
   type: book
 
+lang: fr 
+
 book:
   title: "Démo du package Tabloid"
   author: 
@@ -10,7 +12,7 @@ book:
     - affiliation: 
       - name: Cefil
       - url: http://www.cefil.fr
-  date: "22/05/2025"
+  date: 5/22/2025
   chapters:
     - index.qmd
     - intro.qmd
@@ -22,9 +24,12 @@ bibliography: references.bib
 
 tbl-cap-location: bottom
 df-print: default
+execute:
+  warning: false
 
 format:
   html:
+    page-layout: full
     toc-title: Navigation
     toc: true
     toc-expand: 2

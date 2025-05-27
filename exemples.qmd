@@ -5,10 +5,14 @@
 #| label: packagesdonnees
 library('dplyr')
 library('tabloid')
+library('tidyr')
 grandile <- readRDS('donnees/grandile.rds')
+gapminder <- readRDS('donnees/gapminder.rds')
 ```
 
 ## Chargement des packages et des données
+
+Nous aurons besoin des packages `tabloid` et `dplyr` pour le traitement des données (voir @citedplyr).
 
 ```{r}
 #| eval: false
@@ -24,14 +28,14 @@ glimpse(grandile)
 ```
 
 ## Réaliser un tri à plat
-Le package tabloid fournit un ensemble d efonctions utiles à la réalisation de tableaux statistiques. La première fonction à employer est `tab_build()`. 
+Le package tabloid fournit un ensemble de fonctions utiles à la réalisation de tableaux statistiques. La première fonction à employer est `tab_build()`. 
 
 ::: callout-caution
 ## La fonction tab_build()
 Les paramètres:
 
-- `var_rows`: les variables de comptage ventilée en lignes (entre quotes),
-- `var_cols`: les variables de comptage ventilée en colonnes (entre quotes),
+- `var_rows`: les variables de comptage ventilée en lignes,
+- `var_cols`: les variables de comptage ventilée en colonnes,
 - `var_stat`: la variable de comptage,
 - `stat`: la statistique à utiliser (par défaut "count"): 
     - "mean" : moyenne,
@@ -54,7 +58,7 @@ On réalise un tri à plat sur la variable MODCOHA.
 #| label: tbl-modcoha1
 #| tbl-cap: Répartition des ménages de Grandile selon le mode de cohabitation
 tab1 <- grandile %>% 
-  tab_build(var_rows = "MODCOHA")
+  tab_build(var_rows = MODCOHA)
 tab1
 ```
 
@@ -66,7 +70,7 @@ On remarque que les modalités ne s'affichent pas dans l'ordre alphanumérique c
 #| tbl-cap: Répartition des ménages de Grandile selon le mode de cohabitation
 tab1 <- grandile %>% 
   arrange(MODCOHA) %>% 
-  tab_build(var_rows = "MODCOHA")
+  tab_build(var_rows = MODCOHA)
 tab1
 ```
 :::
@@ -243,11 +247,13 @@ tab1c %>%
     )
 ```
 
+Le résultat:
+
+![](exportxlsx.jpg){style="display: block; margin: auto;"}
 #### Document Quarto
-Il suffit d'inclure le code `tabloid` dans un chunk. Par exemple, le tri à plat des ménages de Grandile par mode de cohabitation.
+Il suffit d'inclure la fonction `tab_render()` à la suite de la production du tableau dans un chunk. Par exemple, le tri à plat des ménages de Grandile par mode de cohabitation.
 
 ```{r}
-#| label: tbl-modcoha6
 tab1 %>% 
   rename(Effectif = count) %>% 
   left_join(
@@ -266,9 +272,255 @@ tab1 %>%
 
 
 ## Tableaux de contingence
+Une table de contingence est un moyen pour présenter simultanément et de manière croisée deux données statistiques. Elle permet d'estimer la dépendance et la relation entre deux caractères observés sur une même population. Le tableau à double entrée est utilisé pour rassembler les effectifs partiels.
 
-## Tableaux de moyennes
+### Croisement entre le diplôme et la PCS
+```{r}
+#| column: page
+#| label: tbl-DIPLxPCS1
+#| tbl-cap: Croisement entre le diplôme et la PCS de la personne de référence des ménages de Grandile
 
-## Variable pondérée
+tab2 <- grandile %>% 
+  arrange(DIPL, PCS) %>% 
+  tab_build(
+    var_rows = DIPL,
+    var_cols = PCS
+  )
 
-## Exporter un tableau
+tab2
+```
+
+et leur profil ligne, permettant de voir les surreprésentations des diplômés dans les PCS.
+
+```{r}
+#| column: page
+#| label: tbl-DIPLxPCS2
+#| tbl-cap: Croisement entre le diplôme et la PCS de la personne de référence des ménages de Grandile
+
+tab2b <- tab2 %>% 
+  tab_pct(pct = "row") %>% 
+  tab_round(n = 1) 
+
+tab2b %>% 
+  tab_render()
+```
+
+## Tableaux d'indicateurs statistiques
+
+### Tableaux de cumuls
+
+Calculons le nombre total de personnes, d'après la variable NBPERS, selon la PCS de la personne de référence du ménage.
+
+```{r}
+#| label: tbl-NBPERSPCS
+#| caption: Nombre de personnes vivant dans les ménages de Grandile selon la PCS de la personne de référence
+tab3 <- grandile %>% 
+  arrange(PCS) %>% 
+  tab_build(var_rows = PCS,
+            var_stat = NBPERS,
+            stat = "mean")
+tab3 %>% 
+  tab_render()
+```
+
+### Tableaux de moyennes
+
+Calculons le revenu moyen des habitants, d'après la variable REVENU, selon la PCS de la personne de référence du ménage. On doit pondérer par le nombre de personnes composant le ménage.
+
+```{r}
+#| label: tbl-REVENUmoyPCS
+#| caption: Revenu moyen des individus de de Grandile selon la PCS de la personne de référence
+tab4 <- grandile %>% 
+  arrange(PCS) %>% 
+  tab_build(
+    var_rows = PCS,
+    var_stat = REVENU,
+    var_w = NBPERS,
+    stat = "weighted_mean"
+  )
+tab4 %>% 
+  tab_render()
+```
+
+## Tableaux en évolution
+
+### Une seule variable d'interêt
+Nous allons réaliser un tableau des populations des pays d'Europe de l'Ouest (région "Western Europe") en 1990 et 2010 à partir des données de Gapminder. 
+
+Tout d'abord chargeons le jeu de données.
+
+```{r}
+#| eval: false
+gapminder <- readRDS('donnees/gapminder.rds')
+                     
+glimpse(gapminder)
+```
+
+```{r}
+#| echo: false
+                     
+glimpse(gapminder)
+```
+
+Construisons le tableau et affichons le:
+```{r}
+#| label: pop9015WE
+
+tab5 <- gapminder %>% 
+  filter(year %in% c(1990, 2010), region == "Western Europe") %>% 
+  mutate(year = as.character(year)) %>% 
+  arrange(country) %>% 
+  tab_build(
+    var_rows = country,
+    var_cols = year,
+    var_stat = population,
+    stat = "sum") 
+
+tab5
+```
+
+Nous disposons de la marge en colonne, qui n'a pas de sens pour une série chronologique. Heurequement, l'objet tab5 peut être modifié, car c'est un tibble !
+
+```{r}
+#| label: pop9015WE2
+tab5 <- tab5 %>% 
+  select(-Ensemble)
+
+tab5
+```
+
+C'est mieux, nous allons pouvoir effectuer un rendu dans le document:
+
+```{r}
+#| label: tbl-pop9015WE
+tab5 %>% 
+  tab_render(
+    title = "Évolution de la population des pays d'Europe de l'Ouest entre 1990 et 2010",
+    note = "Source: Gapminder",
+    lab_rows = "Pays"
+  )
+```
+
+::: callout-note
+## Variables quantitatives
+Vous aurez remarqué que nous avons transformé la variable `year` en variable catégorielle à l'aide de `as.character()`. En effet, `tabloid` ne permet pas de ventiler les individus selon des modalités quantitatives.
+:::
+
+### Deux variables d'interêt
+
+Ce tableau affichera l'évolution du PIB (variable gdp) et du nombre d'habitants dans les pays de la région "Western Europe" en 1990 et en 2010.
+
+On ne peut pas préciser plusieurs variables au paramètre `var_stat =`. On doit donc représenter une seule variable qui prendra plusieurs modalités. Par exemple une variable `indic` dont les valeurs seront dans une variable `val` qui sera la variable d’intérêt de `tabloid.`
+
+Commençons par préparer les données à l'aide du package `tidyr` (voir @citetidyr).
+```{r}
+#| eval: false
+library('tidyr')
+
+datatab6 <- gapminder %>% 
+  tidyr::pivot_longer(cols = c(gdp, population), names_to = "indic", values_to = "val") %>% 
+  filter(year %in% c(1990, 2010), region == "Western Europe") %>% 
+  mutate(year = as.character(year)) %>% 
+  arrange(country)
+```
+
+```{r}
+#| label: prepadatatab6
+library('tidyr')
+
+datatab6 <- gapminder %>% 
+  filter(year %in% c(1990, 2010), region == "Western Europe") %>% 
+  tidyr::pivot_longer(cols = c(gdp, population), names_to = "indic", values_to = "val") %>% 
+  mutate(year = as.character(year)) %>% 
+  arrange(country)
+```
+
+La fonction `pivot_longer(`) transforme les données (plus exactement les colonnes `gdp` et `population`) ce qui nous sera utile lorsque l'on voudra utiliser `tabloid`. En effet, dans le code ci-dessous, vous remarquez que si les pays (classés par ordre alphabétique) sont en lignes (paramètre `var_rows =`), les colonnes prennent comme variable l'année (`year`) et l'indicateur (`gdp` ou `population`) transformé en longueur par `pivot_longer()`. On n'oubliera pas d'enlever toutes les colonnes dont le nom termine par *"Ensemble"*.
+
+```{r}
+#| label: gdppop9915WE
+tab6 <- datatab6 %>% 
+  tab_build(
+    var_rows = country,
+    var_cols = c(year, indic),
+    var_stat = val,
+    stat = "sum") %>% 
+  select(-ends_with("Ensemble"))
+
+tab6
+```
+
+On effectue un rendu du tableau:
+
+```{r}
+#| label: tbl-gdppop9915WE
+tab6 %>% 
+  tab_render(
+    title = "Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010",
+    note = "Source: Gapminder",
+    lab_rows = "Pays",
+    lab_cols = list(indic = c("PIB", "Population"))
+  )
+```
+
+### Série chronologique
+
+Construisons un tableau des évolutions de l'espérance de vie (variable `life_expectancy`) entre 2000 et 2010. Pour construire la marge, nous calculerons la moyenne pondérée selon la population du pays.
+```{r}
+#| label: pop0010SA
+
+tab7 <- gapminder %>%
+  filter(year %in% 2000:2010, region == "South America") %>% 
+  mutate(year = as.character(year)) %>% 
+  arrange(country) %>% 
+  tab_build(
+    var_rows = country, 
+    var_cols = year, 
+    var_stat = life_expectancy, 
+    stat = "weighted_mean", 
+    var_w = population)
+tab7
+```
+
+On arrondit à une décimale et on supprime la colonne Ensemble:
+```{r}
+#| label: pop0010SA2
+tab7 <- tab7 %>% 
+  tab_round(n = 1) %>% 
+  select(-ends_with("Ensemble")) 
+tab7
+```
+
+```{r}
+#| label: tbl-pop0010SA
+tab7 %>% 
+  tab_render(
+    title = "Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2010",
+    note = "Source: Gapminder",
+    lab_rows = "Pays"
+  )
+```
+
+::: callout-tip
+## Supprimer la ligne Ensemble
+Cette marge régionale pose problème. En effet, l'hypothèse retenue est trop forte, il faudrait calculer l'espérance de vie de cet ensemble de pays en reprenant les structures de mortalité et en les agrégeant. On va supprimer cette ligne:
+
+```{r}
+#| label: pop0010SA3
+tab7 <- tab7 %>% 
+  filter(country != "Ensemble")
+
+tab7 %>% 
+  tab_render(
+    title = "Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2001",
+    note = "Source: Gapminder",
+    lab_rows = "Pays"
+  )
+```
+:::
+
+## TODO
+
+### Utilisation de kableExtra pour mettre en forme un rendu html
+
+### Utiliser gt() plutôt que tab_render()
