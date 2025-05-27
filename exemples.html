@@ -227,10 +227,10 @@ div.csl-indent {
   <li><a href="#deux-variables-dinterêt" id="toc-deux-variables-dinterêt" class="nav-link" data-scroll-target="#deux-variables-dinterêt">Deux variables d’interêt</a></li>
   <li><a href="#série-chronologique" id="toc-série-chronologique" class="nav-link" data-scroll-target="#série-chronologique">Série chronologique</a></li>
   </ul></li>
-  <li><a href="#todo" id="toc-todo" class="nav-link" data-scroll-target="#todo">TODO</a>
+  <li><a href="#compléments-sur-la-mise-en-forme" id="toc-compléments-sur-la-mise-en-forme" class="nav-link" data-scroll-target="#compléments-sur-la-mise-en-forme">Compléments sur la mise en forme</a>
   <ul class="collapse">
   <li><a href="#utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html" id="toc-utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html" class="nav-link" data-scroll-target="#utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html">Utilisation de kableExtra pour mettre en forme un rendu html</a></li>
-  <li><a href="#utiliser-gt-plutôt-que-tab_render" id="toc-utiliser-gt-plutôt-que-tab_render" class="nav-link" data-scroll-target="#utiliser-gt-plutôt-que-tab_render">Utiliser gt() plutôt que tab_render()</a></li>
+  <li><a href="#utiliser-gt-plutôt-que-tab_render" id="toc-utiliser-gt-plutôt-que-tab_render" class="nav-link" data-scroll-target="#utiliser-gt-plutôt-que-tab_render">Utiliser <code>gt()</code> plutôt que <code>tab_render()</code></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1049,7 +1049,7 @@ Table&nbsp;9
 <h2 class="anchored" data-anchor-id="tableaux-en-évolution">Tableaux en évolution</h2>
 <section id="une-seule-variable-dinterêt" class="level3">
 <h3 class="anchored" data-anchor-id="une-seule-variable-dinterêt">Une seule variable d’interêt</h3>
-<p>Nous allons réaliser un tableau des populations des pays d’Europe de l’Ouest (région “Western Europe”) en 1990 et 2010 à partir des données de Gapminder.</p>
+<p>Nous allons réaliser un tableau des populations des pays d’Europe de l’Ouest (région “Western Europe”) en 1990 et 2010 à partir des données de Gapminder (voir <span class="citation" data-cites="citegapminder">Bryan (<a href="references.html#ref-citegapminder" role="doc-biblioref">2023</a>)</span>).</p>
 <p>Tout d’abord chargeons le jeu de données.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'donnees/gapminder.rds'</span>)</span>
@@ -1098,7 +1098,7 @@ $ region           &lt;chr&gt; "Southern Europe", "Northern Africa", "Middle Afr
 8 Ensemble    175557194 187688401 363245595</code></pre>
 </div>
 </div>
-<p>Nous disposons de la marge en colonne, qui n’a pas de sens pour une série chronologique. Heurequement, l’objet tab5 peut être modifié, car c’est un tibble !</p>
+<p>Nous disposons de la marge en colonne, qui n’a pas de sens pour une série chronologique. Heureusement, l’objet <code>tab5</code> peut être modifié, car c’est un tibble !</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>tab5 <span class="ot">&lt;-</span> tab5 <span class="sc">%&gt;%</span> </span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Ensemble)</span>
@@ -1268,9 +1268,9 @@ Variables quantitatives
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Pays"</span>,</span>
 <span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_cols =</span> <span class="fu">list</span>(<span class="at">indic =</span> <span class="fu">c</span>(<span class="st">"PIB"</span>, <span class="st">"Population"</span>))</span>
 <span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="tbl-gdppop9915WE" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<div id="tbl-gdppop9910WE" class="cell quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
-<div aria-describedby="tbl-gdppop9915WE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="tbl-gdppop9910WE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
 <table class="lightable-classic do-not-create-environment cell table table-sm table-striped small" data-quarto-postprocess="true">
 <caption>Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010</caption>
@@ -1369,7 +1369,7 @@ Variables quantitatives
 </table>
 </div>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-gdppop9915WE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-gdppop9910WE-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;11: Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010
 </figcaption>
 </figure>
@@ -1692,13 +1692,13 @@ Supprimer la ligne Ensemble
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>tab7 <span class="sc">%&gt;%</span> </span>
 <span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2001"</span>,</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2010"</span>,</span>
 <span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Gapminder"</span>,</span>
 <span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Pays"</span></span>
 <span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2001</caption>
+<caption>Évolution de l'espérance de vie en Amérique du Sud entre 2000 et 2010</caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;" data-quarto-table-cell-role="th">Pays</th>
@@ -1908,16 +1908,667 @@ Supprimer la ligne Ensemble
 </div>
 </section>
 </section>
-<section id="todo" class="level2">
-<h2 class="anchored" data-anchor-id="todo">TODO</h2>
+<section id="compléments-sur-la-mise-en-forme" class="level2">
+<h2 class="anchored" data-anchor-id="compléments-sur-la-mise-en-forme">Compléments sur la mise en forme</h2>
 <section id="utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html" class="level3">
 <h3 class="anchored" data-anchor-id="utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html">Utilisation de kableExtra pour mettre en forme un rendu html</h3>
+<p>L’objet généré par la fonction <code>tab_render()</code> étant un <code>kable</code>, on peut le modifier avec <code>kableExtra</code> et formater les cellules, en incluant des conditions, gérer les largeurs de colonnes, les notes de bas de tableau, les renvois, etc …(voir <span class="citation" data-cites="citekableExtra">Zhu (<a href="references.html#ref-citekableExtra" role="doc-biblioref">2024</a>)</span>)</p>
+<p>Par exemple, avec le <a href="#tbl-gdppop9910WE" class="quarto-xref">Table&nbsp;<span>11</span></a> on peut ajouter:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'kableExtra'</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>tab6 <span class="sc">%&gt;%</span> </span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010"</span>,</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Gapminder"</span>,</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Pays"</span>,</span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_cols =</span> <span class="fu">list</span>(<span class="at">indic =</span> <span class="fu">c</span>(<span class="st">"PIB"</span>, <span class="st">"Population"</span>))</span>
+<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">bold =</span> T,<span class="at">background =</span> <span class="st">"ivory2"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">3</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>, <span class="at">italic =</span> <span class="cn">TRUE</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">background =</span> <span class="st">"steelblue1"</span>)<span class="sc">%&gt;%</span> </span>
+<span id="cb48-11"><a href="#cb48-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">4</span>, <span class="at">color =</span> <span class="st">"tan3"</span>) </span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Évolution de la population et du PIB des pays d'Europe de l'Ouest entre 1990 et 2010</caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: center; empty-cells: hide;"></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+1990
+</div></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #111111; margin-bottom: -1px; ">
+2010
+</div></th>
+</tr>
+<tr class="even">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Pays</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">PIB</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Population</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">PIB</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Population</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Austria</td>
+<td style="text-align: center;">147 353 847 860</td>
+<td style="text-align: center;">7 706 571</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">223 954 137 424</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">8 391 986</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Belgium</td>
+<td style="text-align: center;">186 769 011 525</td>
+<td style="text-align: center;">9 978 241</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">267 143 096 398</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">10 929 978</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center; font-weight: bold; font-style: italic; color: white !important; background-color: rgba(99, 184, 255, 255) !important;">France</td>
+<td style="text-align: center; font-weight: bold; font-style: italic; color: white !important; background-color: rgba(99, 184, 255, 255) !important;">1 091 598 599 817</td>
+<td style="text-align: center; font-weight: bold; font-style: italic; color: white !important; background-color: rgba(99, 184, 255, 255) !important;">56 943 299</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important; font-weight: bold; font-style: italic; color: white !important; background-color: rgba(99, 184, 255, 255) !important;">1 480 999 829 195</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important; font-weight: bold; font-style: italic; color: white !important; background-color: rgba(99, 184, 255, 255) !important;">62 961 136</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; color: rgba(205, 133, 63, 255) !important;">Germany</td>
+<td style="text-align: center; color: rgba(205, 133, 63, 255) !important;">1 556 954 345 661</td>
+<td style="text-align: center; color: rgba(205, 133, 63, 255) !important;">78 958 237</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important; color: rgba(205, 133, 63, 255) !important;">2 069 464 070 055</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important; color: rgba(205, 133, 63, 255) !important;">80 435 307</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Luxembourg</td>
+<td style="text-align: center;">12 401 289 199</td>
+<td style="text-align: center;">381 787</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">26 516 904 700</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">507 889</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Netherlands</td>
+<td style="text-align: center;">281 955 594 047</td>
+<td style="text-align: center;">14 915 139</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">441 185 443 862</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">16 631 571</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Switzerland</td>
+<td style="text-align: center;">224 773 355 504</td>
+<td style="text-align: center;">6 673 920</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">294 748 691 280</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">7 830 534</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">3 501 806 043 613</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">175 557 194</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">4 804 012 172 914</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important; font-weight: bold; background-color: rgba(238, 238, 224, 255) !important;">187 688 401</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: center; padding: 0;"><sup></sup> Source: Gapminder</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
 </section>
 <section id="utiliser-gt-plutôt-que-tab_render" class="level3">
-<h3 class="anchored" data-anchor-id="utiliser-gt-plutôt-que-tab_render">Utiliser gt() plutôt que tab_render()</h3>
+<h3 class="anchored" data-anchor-id="utiliser-gt-plutôt-que-tab_render">Utiliser <code>gt()</code> plutôt que <code>tab_render()</code></h3>
+<p>On peut préférer <code>gt</code> (voir <span class="citation" data-cites="citegt">Iannone et al. (<a href="references.html#ref-citegt" role="doc-biblioref">2025</a>)</span>) pour générer les rendus de tableaux, et ne conserver que la partie computationnelle de <code>tabloid</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'gt'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>tab5 <span class="sc">%&gt;%</span> </span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fmt_number</span>(<span class="at">locale =</span> <span class="st">"fr"</span>, <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> <span class="st">"Pays"</span></span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Évolution de la population des pays d'Europe de l'Ouest entre 1990 et 2010"</span></span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_source_note</span>(</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">source_note =</span> <span class="st">"Source: Gapminder"</span></span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span>  </span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>), <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)), </span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">locations =</span><span class="fu">list</span>(<span class="fu">cells_body</span>(<span class="at">columns =</span> <span class="st">"2010"</span>), <span class="fu">cells_body</span>(<span class="at">rows =</span> country <span class="sc">==</span> <span class="st">"Ensemble"</span>)))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="wtavdydkat" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wtavdydkat table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#wtavdydkat thead, #wtavdydkat tbody, #wtavdydkat tfoot, #wtavdydkat tr, #wtavdydkat td, #wtavdydkat th {
+  border-style: none;
+}
+
+#wtavdydkat p {
+  margin: 0;
+  padding: 0;
+}
+
+#wtavdydkat .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#wtavdydkat .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#wtavdydkat .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#wtavdydkat .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#wtavdydkat .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#wtavdydkat .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#wtavdydkat .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#wtavdydkat .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#wtavdydkat .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wtavdydkat .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#wtavdydkat .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#wtavdydkat .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#wtavdydkat .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#wtavdydkat .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#wtavdydkat .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wtavdydkat .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#wtavdydkat .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#wtavdydkat .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wtavdydkat .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wtavdydkat .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#wtavdydkat .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wtavdydkat .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#wtavdydkat .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wtavdydkat .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wtavdydkat .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wtavdydkat .gt_left {
+  text-align: left;
+}
+
+#wtavdydkat .gt_center {
+  text-align: center;
+}
+
+#wtavdydkat .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#wtavdydkat .gt_font_normal {
+  font-weight: normal;
+}
+
+#wtavdydkat .gt_font_bold {
+  font-weight: bold;
+}
+
+#wtavdydkat .gt_font_italic {
+  font-style: italic;
+}
+
+#wtavdydkat .gt_super {
+  font-size: 65%;
+}
+
+#wtavdydkat .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#wtavdydkat .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#wtavdydkat .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#wtavdydkat .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#wtavdydkat .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#wtavdydkat .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#wtavdydkat .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#wtavdydkat .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#wtavdydkat div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_heading header">
+<th colspan="3" class="gt_heading gt_title gt_font_normal gt_bottom_border">Évolution de la population des pays d'Europe de l'Ouest entre 1990 et 2010</th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Pays</th>
+<th id="a1990" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">1990</th>
+<th id="a2010" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">2010</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="country">Austria</td>
+<td class="gt_row gt_right" headers="1990">7 706 571</td>
+<td class="gt_row gt_right" headers="2010" style="background-color: #D3D3D3; font-weight: bold">8 391 986</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="country">Belgium</td>
+<td class="gt_row gt_right" headers="1990">9 978 241</td>
+<td class="gt_row gt_right" headers="2010" style="background-color: #D3D3D3; font-weight: bold">10 929 978</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="country">France</td>
+<td class="gt_row gt_right" headers="1990">56 943 299</td>
+<td class="gt_row gt_right" headers="2010" style="background-color: #D3D3D3; font-weight: bold">62 961 136</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="country">Germany</td>
+<td class="gt_row gt_right" headers="1990">78 958 237</td>
+<td class="gt_row gt_right" headers="2010" style="background-color: #D3D3D3; font-weight: bold">80 435 307</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="country">Luxembourg</td>
+<td class="gt_row gt_right" headers="1990">381 787</td>
+<td class="gt_row gt_right" headers="2010" style="background-color: #D3D3D3; font-weight: bold">507 889</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="country">Netherlands</td>
+<td class="gt_row gt_right" headers="1990">14 915 139</td>
+<td class="gt_row gt_right" headers="2010" style="background-color: #D3D3D3; font-weight: bold">16 631 571</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="country">Switzerland</td>
+<td class="gt_row gt_right" headers="1990">6 673 920</td>
+<td class="gt_row gt_right" headers="2010" style="background-color: #D3D3D3; font-weight: bold">7 830 534</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="country" style="background-color: #D3D3D3; font-weight: bold">Ensemble</td>
+<td class="gt_row gt_right" headers="1990" style="background-color: #D3D3D3; font-weight: bold">175 557 194</td>
+<td class="gt_row gt_right" headers="2010" style="background-color: #D3D3D3; font-weight: bold">187 688 401</td>
+</tr>
+</tbody><tfoot class="gt_sourcenotes">
+<tr class="odd">
+<td colspan="3" class="gt_sourcenote">Source: Gapminder</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-citegapminder" class="csl-entry" role="listitem">
+Bryan, Jennifer. 2023. <em>gapminder: Data from Gapminder</em>.
+</div>
+<div id="ref-citegt" class="csl-entry" role="listitem">
+Iannone, Richard, Joe Cheng, Barret Schloerke, Ellis Hughes, Alexandra Lauer, JooYoung Seo, Ken Brevoort, et Olivier Roy. 2025. <em>gt: Easily Create Presentation-Ready Display Tables</em>. <a href="https://gt.rstudio.com">https://gt.rstudio.com</a>.
+</div>
 <div id="ref-pillaroptions" class="csl-entry" role="listitem">
 Müller, Kirill, et Hadley Wickham. 2024. <em>Controlling display of numbers</em>. <a href="https://tibble.tidyverse.org/articles/numbers.html">https://tibble.tidyverse.org/articles/numbers.html</a>.
 </div>
@@ -1926,6 +2577,9 @@ Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, et Davis Vaugha
 </div>
 <div id="ref-citetidyr" class="csl-entry" role="listitem">
 Wickham, Hadley, Davis Vaughan, et Maximilian Girlich. 2024. <em>tidyr: Tidy Messy Data</em>. <a href="https://tidyr.tidyverse.org">https://tidyr.tidyverse.org</a>.
+</div>
+<div id="ref-citekableExtra" class="csl-entry" role="listitem">
+Zhu, Hao. 2024. <em>Construct Complex Table with knitr::kable() + pipe</em>. <a href="http://haozhu233.github.io/kableExtra/">http://haozhu233.github.io/kableExtra/</a>.
 </div>
 </div>
 </section>

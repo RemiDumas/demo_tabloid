@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -69,6 +104,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Recherche"
   }
 }</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 </head>
@@ -151,6 +188,8 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#exercice-2" id="toc-exercice-2" class="nav-link" data-scroll-target="#exercice-2">Exercice 2</a></li>
   <li><a href="#exercice-3" id="toc-exercice-3" class="nav-link" data-scroll-target="#exercice-3">Exercice 3</a></li>
   <li><a href="#exercice-4" id="toc-exercice-4" class="nav-link" data-scroll-target="#exercice-4">Exercice 4</a></li>
+  <li><a href="#exercice-5" id="toc-exercice-5" class="nav-link" data-scroll-target="#exercice-5">Exercice 5</a></li>
+  <li><a href="#exercice-6" id="toc-exercice-6" class="nav-link" data-scroll-target="#exercice-6">Exercice 6</a></li>
   </ul>
 </nav>
     </div>
@@ -178,15 +217,204 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="exercice-1" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercice-1">Exercice 1</h2>
+<p>Réalisez un tri à plat de la PCS de la personne de référence des ménages de Grandile en affichant les parts sous forme de pourcentage à une décimale. Titrez et sourcez le tableau au format html.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Solution</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>grandile <span class="sc">%&gt;%</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(PCS) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> PCS</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pct</span>(<span class="at">pct =</span> <span class="st">"col"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(<span class="at">lab_rows =</span> <span class="st">"PCS de la personne de référence du ménage"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>             <span class="at">note =</span> <span class="st">"Source: Cefil"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="exercice-2" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercice-2">Exercice 2</h2>
+<p>Réalisez un tableau affichant la moyenne des revenus des ménages de Grandile par niveau de diplôme. Vous arrondirez à la centaine d’euros Titrez et sourcez le tableau au format html.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Solution</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>grandile <span class="sc">%&gt;%</span> </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(DIPL) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> DIPL,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_stat =</span> REVENU,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"mean"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">n=</span><span class="sc">-</span><span class="dv">2</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Revenu moyen par niveau de diplôme des ménages de Grandile"</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Cefil"</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">lab_rows =</span> <span class="st">"Niveau de diplôme"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="exercice-3" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercice-3">Exercice 3</h2>
+<p>Construisez un tableau de l’âge médian (arrondi à l’entier) des personnes de références des ménages de Grandile selon la PCS.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Solution</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>grandile <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(PCS) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> PCS,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_stat =</span> AGE,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"median"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  )<span class="sc">%&gt;%</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">0</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Âge médian des personnes de référence des ménages de Grandile selon la PCS"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Cefil"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="exercice-4" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="exercice-4">Exercice 4</h2>
+<p>Réalisez un tableau de structure (en % arrondi à une décimale) des PCS selon le secteur d’activité des ménages de Grandile. Titrez et Sourcez le rendu html.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Solution</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>grandile <span class="sc">%&gt;%</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(PCS, ACT) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> PCS,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_cols =</span> ACT,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"count"</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pct</span>(<span class="at">pct =</span> <span class="st">"row"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="dv">1</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"PCS selon le Secteur d'activité des ménages de Grandile"</span>,</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">note =</span> <span class="st">"Source: Cefil"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="exercice-5" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercice-5">Exercice 5</h2>
+<p>A partir des données de Gapminder, construisez le tableau suivant:</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>PIB par continent en Milliards de $</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Continent</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">1960</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">1970</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">1980</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">1990</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2000</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">2010</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Africa</td>
+<td style="text-align: center;">9,7</td>
+<td style="text-align: center;">15,1</td>
+<td style="text-align: center;">22,6</td>
+<td style="text-align: center;">24,6</td>
+<td style="text-align: center;">30,9</td>
+<td style="text-align: center;">48,2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Americas</td>
+<td style="text-align: center;">1 165,4</td>
+<td style="text-align: center;">1 604,3</td>
+<td style="text-align: center;">2 087,0</td>
+<td style="text-align: center;">2 677,2</td>
+<td style="text-align: center;">3 596,1</td>
+<td style="text-align: center;">4 151,3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Asia</td>
+<td style="text-align: center;">101,8</td>
+<td style="text-align: center;">176,4</td>
+<td style="text-align: center;">264,5</td>
+<td style="text-align: center;">436,1</td>
+<td style="text-align: center;">761,8</td>
+<td style="text-align: center;">1 618,9</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Europe</td>
+<td style="text-align: center;">257,7</td>
+<td style="text-align: center;">519,5</td>
+<td style="text-align: center;">621,3</td>
+<td style="text-align: center;">564,9</td>
+<td style="text-align: center;">654,2</td>
+<td style="text-align: center;">774,4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Oceania</td>
+<td style="text-align: center;">78,8</td>
+<td style="text-align: center;">127,2</td>
+<td style="text-align: center;">146,3</td>
+<td style="text-align: center;">197,1</td>
+<td style="text-align: center;">267,0</td>
+<td style="text-align: center;">360,6</td>
+</tr>
+<tr class="even">
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">Ensemble</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">292,7</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">437,3</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">570,0</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">717,1</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">1 045,5</td>
+<td style="text-align: center; font-weight: bold; background-color: rgba(230, 230, 230, 255) !important;">1 637,5</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: center; padding: 0;"><sup></sup> Source: Gapminder</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Solution</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.character</span>(year),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">gdpM =</span> gdp<span class="sc">/</span><span class="fl">1E9</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(year <span class="sc">%in%</span> <span class="fu">c</span>(<span class="dv">1960</span>, <span class="dv">1970</span>, <span class="dv">1980</span>, <span class="dv">1990</span>, <span class="dv">2000</span>, <span class="dv">2010</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(continent) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_build</span>(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_rows =</span> continent,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_cols =</span> year,</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_stat =</span> gdpM,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">var_w =</span> population,</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">stat =</span> <span class="st">"weighted_mean"</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="st">"Ensemble"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_round</span>(<span class="at">n =</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_render</span>(<span class="at">title =</span> <span class="st">"PIB par continent en Milliards de $"</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>             <span class="at">note =</span> <span class="st">"Source: Gapminder"</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>             <span class="at">lab_rows =</span> <span class="st">"Continent"</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="exercice-6" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="exercice-6">Exercice 6</h2>
+<p>Réalisez le tableau de moyenne pondérée de votre choix à partir des données des ménages de Grandile.</p>
 
 
 </section>
