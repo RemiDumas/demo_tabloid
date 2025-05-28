@@ -59,7 +59,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -96,7 +95,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-10528e47c2783b5d486f6bc44252e320.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0c60d1adc2bac23b7fb77c542fabad15.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -191,7 +190,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
+ <span class="menu-text">References bibliographiques</span></a>
   </div>
 </li>
     </ul>
@@ -259,7 +258,7 @@ div.csl-indent {
 
 <section id="chargement-des-packages-et-des-données" class="level2">
 <h2 class="anchored" data-anchor-id="chargement-des-packages-et-des-données">Chargement des packages et des données</h2>
-<p>Nous aurons besoin des packages <code>tabloid</code> et <code>dplyr</code> pour le traitement des données (voir <span class="citation" data-cites="citedplyr">Wickham et al. (<a href="references.html#ref-citedplyr" role="doc-biblioref">2023</a>)</span>).</p>
+<p>Nous aurons besoin des packages <code>tabloid</code> et <code>dplyr</code> pour le traitement des données (voir <span class="citation" data-cites="citedplyr">[<a href="references.html#ref-citedplyr" role="doc-biblioref">1</a>]</span>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'tabloid'</span>)</span>
@@ -511,7 +510,7 @@ Astuce
 6 Ensemble                  100   </code></pre>
 </div>
 </div>
-<p>Il faut préciser le nombre de chiffres affichés (par exemple 7) grâce à la commande <code>pillar::pillar_options()</code> (voir <span class="citation" data-cites="pillaroptions">Müller et Wickham (<a href="references.html#ref-pillaroptions" role="doc-biblioref">2024</a>)</span>). La commande <code>options(old)</code> permet de revenir au paramétrage initial.</p>
+<p>Il faut préciser le nombre de chiffres affichés (par exemple 7) grâce à la commande <code>pillar::pillar_options()</code> (voir <span class="citation" data-cites="pillaroptions">[<a href="references.html#ref-pillaroptions" role="doc-biblioref">2</a>]</span>). La commande <code>options(old)</code> permet de revenir au paramétrage initial.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>old <span class="ot">&lt;-</span> <span class="fu">options</span>(<span class="at">pillar.sigfig =</span> <span class="dv">7</span>)</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1057,7 +1056,7 @@ Table&nbsp;9
 <h2 class="anchored" data-anchor-id="tableaux-en-évolution">Tableaux en évolution</h2>
 <section id="une-seule-variable-dinterêt" class="level3">
 <h3 class="anchored" data-anchor-id="une-seule-variable-dinterêt">Une seule variable d’interêt</h3>
-<p>Nous allons réaliser un tableau des populations des pays d’Europe de l’Ouest (région “Western Europe”) en 1990 et 2010 à partir des données de Gapminder (voir <span class="citation" data-cites="citegapminder">Bryan (<a href="references.html#ref-citegapminder" role="doc-biblioref">2023</a>)</span>).</p>
+<p>Nous allons réaliser un tableau des populations des pays d’Europe de l’Ouest (région “Western Europe”) en 1990 et 2010 à partir des données de Gapminder (voir <span class="citation" data-cites="citegapminder">[<a href="references.html#ref-citegapminder" role="doc-biblioref">3</a>]</span>).</p>
 <p>Tout d’abord chargeons le jeu de données.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">'donnees/gapminder.rds'</span>)</span>
@@ -1223,7 +1222,7 @@ Variables quantitatives
 <h3 class="anchored" data-anchor-id="deux-variables-dinterêt">Deux variables d’interêt</h3>
 <p>Ce tableau affichera l’évolution du PIB (variable gdp) et du nombre d’habitants dans les pays de la région “Western Europe” en 1990 et en 2010.</p>
 <p>On ne peut pas préciser plusieurs variables au paramètre <code>var_stat =</code>. On doit donc représenter une seule variable qui prendra plusieurs modalités. Par exemple une variable <code>indic</code> dont les valeurs seront dans une variable <code>val</code> qui sera la variable d’intérêt de <code>tabloid.</code></p>
-<p>Commençons par préparer les données à l’aide du package <code>tidyr</code> (voir <span class="citation" data-cites="citetidyr">Wickham, Vaughan, et Girlich (<a href="references.html#ref-citetidyr" role="doc-biblioref">2024</a>)</span>).</p>
+<p>Commençons par préparer les données à l’aide du package <code>tidyr</code> (voir <span class="citation" data-cites="citetidyr">[<a href="references.html#ref-citetidyr" role="doc-biblioref">4</a>]</span>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'tidyr'</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -1920,7 +1919,7 @@ Supprimer la ligne Ensemble
 <h2 class="anchored" data-anchor-id="compléments-sur-la-mise-en-forme">Compléments sur la mise en forme</h2>
 <section id="utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html" class="level3">
 <h3 class="anchored" data-anchor-id="utilisation-de-kableextra-pour-mettre-en-forme-un-rendu-html">Utilisation de kableExtra pour mettre en forme un rendu html</h3>
-<p>L’objet généré par la fonction <code>tab_render()</code> étant un <code>kable</code>, on peut le modifier avec <code>kableExtra</code> et formater les cellules, en incluant des conditions, gérer les largeurs de colonnes, les notes de bas de tableau, les renvois, etc …(voir <span class="citation" data-cites="citekableExtra">Zhu (<a href="references.html#ref-citekableExtra" role="doc-biblioref">2024</a>)</span>)</p>
+<p>L’objet généré par la fonction <code>tab_render()</code> étant un <code>kable</code>, on peut le modifier avec <code>kableExtra</code> et formater les cellules, en incluant des conditions, gérer les largeurs de colonnes, les notes de bas de tableau, les renvois, etc …(voir <span class="citation" data-cites="citekableExtra">[<a href="references.html#ref-citekableExtra" role="doc-biblioref">5</a>]</span>)</p>
 <p>Par exemple, avec le <a href="#tbl-gdppop9910WE" class="quarto-xref">Table&nbsp;<span>11</span></a> on peut ajouter:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'kableExtra'</span>)</span>
@@ -2035,7 +2034,7 @@ Supprimer la ligne Ensemble
 </section>
 <section id="utiliser-gt-plutôt-que-tab_render" class="level3">
 <h3 class="anchored" data-anchor-id="utiliser-gt-plutôt-que-tab_render">Utiliser <code>gt()</code> plutôt que <code>tab_render()</code></h3>
-<p>On peut préférer <code>gt</code> (voir <span class="citation" data-cites="citegt">Iannone et al. (<a href="references.html#ref-citegt" role="doc-biblioref">2025</a>)</span>) pour générer les rendus de tableaux, et ne conserver que la partie computationnelle de <code>tabloid</code>.</p>
+<p>On peut préférer <code>gt</code> (voir <span class="citation" data-cites="citegt">[<a href="references.html#ref-citegt" role="doc-biblioref">6</a>]</span>) pour générer les rendus de tableaux, et ne conserver que la partie computationnelle de <code>tabloid</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'gt'</span>)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -2055,23 +2054,23 @@ Supprimer la ligne Ensemble
 <span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">list</span>(<span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"lightgrey"</span>), <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)), </span>
 <span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>            <span class="at">locations =</span><span class="fu">list</span>(<span class="fu">cells_body</span>(<span class="at">columns =</span> <span class="st">"2010"</span>), <span class="fu">cells_body</span>(<span class="at">rows =</span> country <span class="sc">==</span> <span class="st">"Ensemble"</span>)))</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="westppzbmg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#westppzbmg table {
+<div id="ootsrxeide" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ootsrxeide table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#westppzbmg thead, #westppzbmg tbody, #westppzbmg tfoot, #westppzbmg tr, #westppzbmg td, #westppzbmg th {
+#ootsrxeide thead, #ootsrxeide tbody, #ootsrxeide tfoot, #ootsrxeide tr, #ootsrxeide td, #ootsrxeide th {
   border-style: none;
 }
 
-#westppzbmg p {
+#ootsrxeide p {
   margin: 0;
   padding: 0;
 }
 
-#westppzbmg .gt_table {
+#ootsrxeide .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2097,12 +2096,12 @@ Supprimer la ligne Ensemble
   border-left-color: #D3D3D3;
 }
 
-#westppzbmg .gt_caption {
+#ootsrxeide .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#westppzbmg .gt_title {
+#ootsrxeide .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2114,7 +2113,7 @@ Supprimer la ligne Ensemble
   border-bottom-width: 0;
 }
 
-#westppzbmg .gt_subtitle {
+#ootsrxeide .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2126,7 +2125,7 @@ Supprimer la ligne Ensemble
   border-top-width: 0;
 }
 
-#westppzbmg .gt_heading {
+#ootsrxeide .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2138,13 +2137,13 @@ Supprimer la ligne Ensemble
   border-right-color: #D3D3D3;
 }
 
-#westppzbmg .gt_bottom_border {
+#ootsrxeide .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#westppzbmg .gt_col_headings {
+#ootsrxeide .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2159,7 +2158,7 @@ Supprimer la ligne Ensemble
   border-right-color: #D3D3D3;
 }
 
-#westppzbmg .gt_col_heading {
+#ootsrxeide .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2179,7 +2178,7 @@ Supprimer la ligne Ensemble
   overflow-x: hidden;
 }
 
-#westppzbmg .gt_column_spanner_outer {
+#ootsrxeide .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2191,15 +2190,15 @@ Supprimer la ligne Ensemble
   padding-right: 4px;
 }
 
-#westppzbmg .gt_column_spanner_outer:first-child {
+#ootsrxeide .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#westppzbmg .gt_column_spanner_outer:last-child {
+#ootsrxeide .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#westppzbmg .gt_column_spanner {
+#ootsrxeide .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2211,11 +2210,11 @@ Supprimer la ligne Ensemble
   width: 100%;
 }
 
-#westppzbmg .gt_spanner_row {
+#ootsrxeide .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#westppzbmg .gt_group_heading {
+#ootsrxeide .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2241,7 +2240,7 @@ Supprimer la ligne Ensemble
   text-align: left;
 }
 
-#westppzbmg .gt_empty_group_heading {
+#ootsrxeide .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2256,15 +2255,15 @@ Supprimer la ligne Ensemble
   vertical-align: middle;
 }
 
-#westppzbmg .gt_from_md > :first-child {
+#ootsrxeide .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#westppzbmg .gt_from_md > :last-child {
+#ootsrxeide .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#westppzbmg .gt_row {
+#ootsrxeide .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2283,7 +2282,7 @@ Supprimer la ligne Ensemble
   overflow-x: hidden;
 }
 
-#westppzbmg .gt_stub {
+#ootsrxeide .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2296,7 +2295,7 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#westppzbmg .gt_stub_row_group {
+#ootsrxeide .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2310,15 +2309,15 @@ Supprimer la ligne Ensemble
   vertical-align: top;
 }
 
-#westppzbmg .gt_row_group_first td {
+#ootsrxeide .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#westppzbmg .gt_row_group_first th {
+#ootsrxeide .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#westppzbmg .gt_summary_row {
+#ootsrxeide .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2328,16 +2327,16 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#westppzbmg .gt_first_summary_row {
+#ootsrxeide .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#westppzbmg .gt_first_summary_row.thick {
+#ootsrxeide .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#westppzbmg .gt_last_summary_row {
+#ootsrxeide .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2347,7 +2346,7 @@ Supprimer la ligne Ensemble
   border-bottom-color: #D3D3D3;
 }
 
-#westppzbmg .gt_grand_summary_row {
+#ootsrxeide .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2357,7 +2356,7 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#westppzbmg .gt_first_grand_summary_row {
+#ootsrxeide .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2367,7 +2366,7 @@ Supprimer la ligne Ensemble
   border-top-color: #D3D3D3;
 }
 
-#westppzbmg .gt_last_grand_summary_row_top {
+#ootsrxeide .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2377,11 +2376,11 @@ Supprimer la ligne Ensemble
   border-bottom-color: #D3D3D3;
 }
 
-#westppzbmg .gt_striped {
+#ootsrxeide .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#westppzbmg .gt_table_body {
+#ootsrxeide .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2390,7 +2389,7 @@ Supprimer la ligne Ensemble
   border-bottom-color: #D3D3D3;
 }
 
-#westppzbmg .gt_footnotes {
+#ootsrxeide .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2404,7 +2403,7 @@ Supprimer la ligne Ensemble
   border-right-color: #D3D3D3;
 }
 
-#westppzbmg .gt_footnote {
+#ootsrxeide .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2413,7 +2412,7 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#westppzbmg .gt_sourcenotes {
+#ootsrxeide .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2427,7 +2426,7 @@ Supprimer la ligne Ensemble
   border-right-color: #D3D3D3;
 }
 
-#westppzbmg .gt_sourcenote {
+#ootsrxeide .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2435,72 +2434,72 @@ Supprimer la ligne Ensemble
   padding-right: 5px;
 }
 
-#westppzbmg .gt_left {
+#ootsrxeide .gt_left {
   text-align: left;
 }
 
-#westppzbmg .gt_center {
+#ootsrxeide .gt_center {
   text-align: center;
 }
 
-#westppzbmg .gt_right {
+#ootsrxeide .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#westppzbmg .gt_font_normal {
+#ootsrxeide .gt_font_normal {
   font-weight: normal;
 }
 
-#westppzbmg .gt_font_bold {
+#ootsrxeide .gt_font_bold {
   font-weight: bold;
 }
 
-#westppzbmg .gt_font_italic {
+#ootsrxeide .gt_font_italic {
   font-style: italic;
 }
 
-#westppzbmg .gt_super {
+#ootsrxeide .gt_super {
   font-size: 65%;
 }
 
-#westppzbmg .gt_footnote_marks {
+#ootsrxeide .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#westppzbmg .gt_asterisk {
+#ootsrxeide .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#westppzbmg .gt_indent_1 {
+#ootsrxeide .gt_indent_1 {
   text-indent: 5px;
 }
 
-#westppzbmg .gt_indent_2 {
+#ootsrxeide .gt_indent_2 {
   text-indent: 10px;
 }
 
-#westppzbmg .gt_indent_3 {
+#ootsrxeide .gt_indent_3 {
   text-indent: 15px;
 }
 
-#westppzbmg .gt_indent_4 {
+#ootsrxeide .gt_indent_4 {
   text-indent: 20px;
 }
 
-#westppzbmg .gt_indent_5 {
+#ootsrxeide .gt_indent_5 {
   text-indent: 25px;
 }
 
-#westppzbmg .katex-display {
+#ootsrxeide .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#westppzbmg div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#ootsrxeide div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2570,24 +2569,24 @@ Supprimer la ligne Ensemble
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-citegapminder" class="csl-entry" role="listitem">
-Bryan, Jennifer. 2023. <em>gapminder: Data from Gapminder</em>.
-</div>
-<div id="ref-citegt" class="csl-entry" role="listitem">
-Iannone, Richard, Joe Cheng, Barret Schloerke, Ellis Hughes, Alexandra Lauer, JooYoung Seo, Ken Brevoort, et Olivier Roy. 2025. <em>gt: Easily Create Presentation-Ready Display Tables</em>. <a href="https://gt.rstudio.com">https://gt.rstudio.com</a>.
+<div id="refs" class="references csl-bib-body" role="list" style="display: none">
+<div id="ref-citedplyr" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">Wickham H, François R, Henry L, et al. dplyr: A Grammar of Data Manipulation [Internet]. 2023. Consulté à l'adresse: <a href="https://dplyr.tidyverse.org">https://dplyr.tidyverse.org</a>.</div>
 </div>
 <div id="ref-pillaroptions" class="csl-entry" role="listitem">
-Müller, Kirill, et Hadley Wickham. 2024. <em>Controlling display of numbers</em>. <a href="https://tibble.tidyverse.org/articles/numbers.html">https://tibble.tidyverse.org/articles/numbers.html</a>.
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">Müller K, Wickham H. Controlling display of numbers [Internet]. 2024. Consulté à l'adresse: <a href="https://tibble.tidyverse.org/articles/numbers.html">https://tibble.tidyverse.org/articles/numbers.html</a>.</div>
 </div>
-<div id="ref-citedplyr" class="csl-entry" role="listitem">
-Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, et Davis Vaughan. 2023. <em>dplyr: A Grammar of Data Manipulation</em>. <a href="https://dplyr.tidyverse.org">https://dplyr.tidyverse.org</a>.
+<div id="ref-citegapminder" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">Bryan J. gapminder: Data from Gapminder. 2023.</div>
 </div>
 <div id="ref-citetidyr" class="csl-entry" role="listitem">
-Wickham, Hadley, Davis Vaughan, et Maximilian Girlich. 2024. <em>tidyr: Tidy Messy Data</em>. <a href="https://tidyr.tidyverse.org">https://tidyr.tidyverse.org</a>.
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">Wickham H, Vaughan D, Girlich M. tidyr: Tidy Messy Data [Internet]. 2024. Consulté à l'adresse: <a href="https://tidyr.tidyverse.org">https://tidyr.tidyverse.org</a>.</div>
 </div>
 <div id="ref-citekableExtra" class="csl-entry" role="listitem">
-Zhu, Hao. 2024. <em>Construct Complex Table with knitr::kable() + pipe</em>. <a href="http://haozhu233.github.io/kableExtra/">http://haozhu233.github.io/kableExtra/</a>.
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">Zhu H. Construct Complex Table with knitr::kable() + pipe [Internet]. 2024. Consulté à l'adresse: <a href="http://haozhu233.github.io/kableExtra/">http://haozhu233.github.io/kableExtra/</a>.</div>
+</div>
+<div id="ref-citegt" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">Iannone R, Cheng J, Schloerke B, et al. gt: Easily Create Presentation-Ready Display Tables [Internet]. 2025. Consulté à l'adresse: <a href="https://gt.rstudio.com">https://gt.rstudio.com</a>.</div>
 </div>
 </div>
 </section>
@@ -3006,6 +3005,26 @@ Zhu, Hao. 2024. <em>Construct Complex Table with knitr::kable() + pipe</em>. <a 
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright 2025, Rémi Dumas</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/RemiDumas/demo_tabloid">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
 
 
 
