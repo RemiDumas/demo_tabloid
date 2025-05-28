@@ -19,8 +19,15 @@ book:
     - exemples.qmd
     - exercices.qmd
     - references.qmd
+  page-footer: 
+    background: light
+    left: "Copyright 2025, Rémi Dumas" 
+    right: 
+      - icon: github
+        href: https://github.com/RemiDumas/demo_tabloid
 
 bibliography: references.bib
+csl: journal-of-statistical-computation-and-simulation.csl
 
 tbl-cap-location: bottom
 df-print: default
